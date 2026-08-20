@@ -1,0 +1,32 @@
+# ============================================================
+# Neo4j 连接配置
+# File: action_data_neo4j_connection_config_v0001.yml
+# Layer: derivation / action / neo4j
+# Version: v0001
+#
+# 本配置供 init_graph_schema / sync_to_graph / query_graph 等
+# 图数据库派生路径脚本读取
+#
+# 密码传入方式（优先级从高到低）：
+#   1. 命令行参数 --password
+#   2. 环境变量 NEO4J_PASSWORD
+#   3. 下方 password 字段（取消注释即可，仅限本地开发）
+#
+# 注意：若项目上传公开仓库，请勿取消 password 注释
+# ============================================================
+
+connection:
+  uri: "bolt://localhost:7688"
+  user: "neo4j"
+  database: "neo4j"
+  # password: "你的密码"    # 仅限本地开发使用，生产环境请用环境变量
+
+paths:
+  run_meta: "derivation/action/neo4j/run_meta"
+  export: "derivation/action/neo4j/export"
+
+# ============================================================
+# 数据库物理位置由 Neo4j Desktop 或服务端管理。
+# 行动端脚本只通过 Bolt 协议连接，不在 config 中记录绝对物理路径。
+# ============================================================
+

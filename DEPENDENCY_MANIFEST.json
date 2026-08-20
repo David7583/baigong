@@ -1,0 +1,826 @@
+{
+  "schema_version": "data_action_demo_dependency_manifest_v0002",
+  "generated_at": "2026-08-20T07:32:31.4561053Z",
+  "entry_point": "scripts/orchestration/action/data_action_chain_pipeline_v0006.py",
+  "basis": [
+    "sanitized acceptance summary",
+    "recursive Python filename references"
+  ],
+  "scope": "Baigong (百工) Data-Action demo; Neo4j not acceptance-tested",
+  "counts": {
+    "config_examples": 29,
+    "scripts": 82,
+    "sample_data": 1,
+    "release_artifacts": 17
+  },
+  "scripts": [
+    {
+      "source": "scripts\\action\\adapters\\select_semantic_text_units_v0001.py",
+      "destination": "scripts\\action\\adapters\\select_semantic_text_units_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "8b34fdcb95476b97d31afd8d480a3822fb5761fb9b9ad6bf0f20b72632d4fd8d"
+    },
+    {
+      "source": "scripts\\action\\anchor\\check_sql_integrity_v0003.py",
+      "destination": "scripts\\action\\anchor\\check_sql_integrity_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "1c170f4a6e08bbd8b434a480d0385416bfb0f0d8ea5596599edb2089dbece750"
+    },
+    {
+      "source": "scripts\\action\\anchor\\ingest_attribute_units_v0003.py",
+      "destination": "scripts\\action\\anchor\\ingest_attribute_units_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "cbe040d95a0fb87812184420a46e9a6e4136293860cf6a8fd4a8f7004a950e00"
+    },
+    {
+      "source": "scripts\\action\\anchor\\ingest_concept_units_v0002.py",
+      "destination": "scripts\\action\\anchor\\ingest_concept_units_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "40aa8993a0f0213de39cbc2820554bca720d21293e1c96a3837310fca4c87fda"
+    },
+    {
+      "source": "scripts\\action\\anchor\\ingest_instance_units_v0002.py",
+      "destination": "scripts\\action\\anchor\\ingest_instance_units_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "e57b04ea67f4573c339f06c9588fc38a756178ef1cd929d8d151cd26cfb7f257"
+    },
+    {
+      "source": "scripts\\action\\anchor\\ingest_instance_units_v0003.py",
+      "destination": "scripts\\action\\anchor\\ingest_instance_units_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "0821db66f800d9a4bff0acfd5384a6057ee3ac7aa9fdbe436cdfa59c6e85eb42"
+    },
+    {
+      "source": "scripts\\action\\anchor\\replay_ingest_run_v0004.py",
+      "destination": "scripts\\action\\anchor\\replay_ingest_run_v0004.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "152c15343911f37c897f681539d48e40bcfbd124d8611e46ea1c2b260a32cf68"
+    },
+    {
+      "source": "scripts\\action\\anchor\\sql_writer_v0004.py",
+      "destination": "scripts\\action\\anchor\\sql_writer_v0004.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "73f5fb6fa55a090110a866113a90a2a2b7b4198373448002dc92ccdf70afffff"
+    },
+    {
+      "source": "scripts\\action\\anchor\\validate_ingest_payload_v0003.py",
+      "destination": "scripts\\action\\anchor\\validate_ingest_payload_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "7baa0bd54ec41904c9252b35694fab8a77b4fc2552c951008a1de8e88cdb40b4"
+    },
+    {
+      "source": "scripts\\action\\anchor\\verify_data_anchor_v0002.py",
+      "destination": "scripts\\action\\anchor\\verify_data_anchor_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "6b23b6e1315f78118d1835439eab96fee0dbab4d011405b88ebd71037149ed39"
+    },
+    {
+      "source": "scripts\\action\\archive\\anchor\\validate_ingest_payload_v0001.py",
+      "destination": "scripts\\action\\archive\\anchor\\validate_ingest_payload_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "35339867d662e1953ee262e7bb1cdd2ef412d60e1374055abb2a125b8e2c3597"
+    },
+    {
+      "source": "scripts\\action\\archive\\anchor\\verify_data_anchor_v0001.py",
+      "destination": "scripts\\action\\archive\\anchor\\verify_data_anchor_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "264da3f3331bbbc29c410bf19c0b089ae8d3088574b80e1bc894bfe711803c93"
+    },
+    {
+      "source": "scripts\\action\\derivation\\enrich_retrieval_with_analytics_v0001.py",
+      "destination": "scripts\\action\\derivation\\enrich_retrieval_with_analytics_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "708512e41300b74bbd501dd2486a5e254610b66d5211263c7ee6f03c2ca6b74b"
+    },
+    {
+      "source": "scripts\\action\\derivation\\init_graph_schema_v0002.py",
+      "destination": "scripts\\action\\derivation\\init_graph_schema_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "84be92738e3cdb2bedb49f831df66eff4a1aa9efa192a31f1ebb873f01b0b763"
+    },
+    {
+      "source": "scripts\\action\\derivation\\query_duckdb_direct_v0001.py",
+      "destination": "scripts\\action\\derivation\\query_duckdb_direct_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "1cb3cdd0caeeac8ebf6486b086577cdf4c629ac3cc04bf45814ffc85c4ddbb41"
+    },
+    {
+      "source": "scripts\\action\\derivation\\sync_hierarchy_to_graph_v0002.py",
+      "destination": "scripts\\action\\derivation\\sync_hierarchy_to_graph_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "87c4d10bce02afaa235cc2f3d7275bc0cf84fd3c0a69cb3156bf6fc5e227f516"
+    },
+    {
+      "source": "scripts\\action\\derivation\\sync_sql_to_duckdb_v0004.py",
+      "destination": "scripts\\action\\derivation\\sync_sql_to_duckdb_v0004.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "c560da19b259f742a174da2dc8b799a3c1a4eda75d384aae9d5614321576dad9"
+    },
+    {
+      "source": "scripts\\action\\derivation\\sync_to_graph_v0002.py",
+      "destination": "scripts\\action\\derivation\\sync_to_graph_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "353232866b4beb92373e01d2ffdbc0c7dab1439d84bfd1b3f4fccb82d98806a9"
+    },
+    {
+      "source": "scripts\\action\\infrastructures\\register_action_lineage_v0002.py",
+      "destination": "scripts\\action\\infrastructures\\register_action_lineage_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "3727a20bf2260d8093941fe5f2a64c83b95c55c536d1e080add70271115ac009"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\aggregate_graph_statistics_v0002.py",
+      "destination": "scripts\\action\\pipelines\\aggregate_graph_statistics_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "315f79a69f5930b27aab07d7766babd027519f2fcca74690376d7b51946398f5"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\analyze_graph_statistics_v0002.py",
+      "destination": "scripts\\action\\pipelines\\analyze_graph_statistics_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "227ff33bae90f2d28f1208852b8e152d2d67a0505c69b50c014c66a186b85ee7"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\analyze_structural_adjacency_v0004.py",
+      "destination": "scripts\\action\\pipelines\\analyze_structural_adjacency_v0004.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "6a663be734e5f9f839917327f1edf10294b3778ab838bca7abbeb1375f595358"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\analyze_structural_cooccurrence_v0004.py",
+      "destination": "scripts\\action\\pipelines\\analyze_structural_cooccurrence_v0004.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "bc3fe6482cccd65d9ae933fe13f1f01cbdf5b7f0e79fc2ad6c781046fdea4255"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\analyze_structural_hierarchy_v0004.py",
+      "destination": "scripts\\action\\pipelines\\analyze_structural_hierarchy_v0004.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "ee0e088398f006f1c7ef5094d55ba3223b5232d2b163729e5c91e3593a84e1eb"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\analyze_structural_statistics_v0003.py",
+      "destination": "scripts\\action\\pipelines\\analyze_structural_statistics_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "e467e17d256529df7ad084724cf9ffd1b06c203c63c43a8a4d53591e87c906a0"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\build_unit_adjacency_graph_v0003.py",
+      "destination": "scripts\\action\\pipelines\\build_unit_adjacency_graph_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "9f72d62ad90b7e97a39454a77691081294709d9b0a76197631c78884e5225db4"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\build_unit_cooccurrence_graph_v0003.py",
+      "destination": "scripts\\action\\pipelines\\build_unit_cooccurrence_graph_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "9213b562e62e580a9053f0a617dc70b29197bfba5f313068a38217c0e48b70a2"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\build_unit_hierarchy_graph_v0002.py",
+      "destination": "scripts\\action\\pipelines\\build_unit_hierarchy_graph_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "37a0c2afe2c7bdc9e5293c9ff2d94b50a12bac2a44d9ef797cf64e244546834b"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\decide_parse_eligibility_v0003.py",
+      "destination": "scripts\\action\\pipelines\\decide_parse_eligibility_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "79ba602ac2f3d21e807f45a7193966c10fc88d8eb5bd62878bd85228165cfe14"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\decide_unit_prominence_v0004.py",
+      "destination": "scripts\\action\\pipelines\\decide_unit_prominence_v0004.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "d49712a2437953ae7d59a77e68b1feb45583bf18cd93a1bbdaffdfdaeaa341a4"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\extract_frequent_units_v0003.py",
+      "destination": "scripts\\action\\pipelines\\extract_frequent_units_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "b9dc2b22903999b6a9b0264c09c52ec4a01514294ef2e1409ae0e5e5914e508d"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\filter_structural_noise_v0003.py",
+      "destination": "scripts\\action\\pipelines\\filter_structural_noise_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "7389caa57e4d71906201a82019259574edcd6734b71888d91e0e9cd6efa00c71"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\language_parse_lite_v0003.py",
+      "destination": "scripts\\action\\pipelines\\language_parse_lite_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "e1b29555cd1c8558a6c24a4c130a2beeb50b6fe950aa8aa3e588188875215333"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\normalize_text_units_v0002.py",
+      "destination": "scripts\\action\\pipelines\\normalize_text_units_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "282cbb0553d23a54c1d048349632e2129503a628c9b02a2bc05012fc304e1867"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\normalize_unit_variants_v0003.py",
+      "destination": "scripts\\action\\pipelines\\normalize_unit_variants_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "6fe2fe4f5c16bc08c6003e4f8069e48d722dcf88a24782a7e826b4b814a7c89b"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\profile_string_values_v0004.py",
+      "destination": "scripts\\action\\pipelines\\profile_string_values_v0004.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "07cf00162036e7b2d09d404b0c1fa1913c1cfacf7915880f2623826108e02661"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\profile_unit_structure_v0003.py",
+      "destination": "scripts\\action\\pipelines\\profile_unit_structure_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "23367e19656d7b2cea6e59204bce2ea312271d0ea0e3f5ca57552ab61ca08338"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\register_structural_units_v0003.py",
+      "destination": "scripts\\action\\pipelines\\register_structural_units_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "5e8e53b8a3a3dc091e1f76bcd3fe60c23d85ba60aac11b3ad21840a184ccc5cc"
+    },
+    {
+      "source": "scripts\\action\\pipelines\\validate_unit_boundaries_v0003.py",
+      "destination": "scripts\\action\\pipelines\\validate_unit_boundaries_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "39fc9c5b4504e755d3b6cd355fe2e6250c8f16febcdee18660bbfcec289db681"
+    },
+    {
+      "source": "scripts\\action\\tools\\init_action_data_duckdb_schema_v0001.py",
+      "destination": "scripts\\action\\tools\\init_action_data_duckdb_schema_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "b82a5fc798f28a4304c8fd83eb692d5d26b71051ff55c7b85b9308360b1aa206"
+    },
+    {
+      "source": "scripts\\action\\tools\\init_action_data_sql_schema_v0001.py",
+      "destination": "scripts\\action\\tools\\init_action_data_sql_schema_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "ad48b80e26a3db97460b5206fa8d11e0357b7d9df60abb99d0e91f4634f48e1b"
+    },
+    {
+      "source": "scripts\\action\\vector\\embedding_contract_validator_v0002.py",
+      "destination": "scripts\\action\\vector\\embedding_contract_validator_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "7059e69548287488295826f9e1b2677211e0c2477a1f507bcfacfd0318d89a48"
+    },
+    {
+      "source": "scripts\\action\\vector\\embedding_generator_v0004.py",
+      "destination": "scripts\\action\\vector\\embedding_generator_v0004.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "51ad6f410287227ae6ab2119da56bfe9050f3082fe3b106d4d02333f95a65247"
+    },
+    {
+      "source": "scripts\\action\\vector\\embedding_lifecycle_guard_v0001.py",
+      "destination": "scripts\\action\\vector\\embedding_lifecycle_guard_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "9be864343c06dc3c845bac5c895058d1131be90dd039c7f50282b9c377443a4c"
+    },
+    {
+      "source": "scripts\\action\\vector\\embedding_writer_v0001.py",
+      "destination": "scripts\\action\\vector\\embedding_writer_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "46f78092a9e4c3187be82ad882f0eee1ffa5af099b41417083e4bfeb22c8e9ae"
+    },
+    {
+      "source": "scripts\\action\\vector\\vector_integrity_check_v0001.py",
+      "destination": "scripts\\action\\vector\\vector_integrity_check_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "41815ce88ad2772d05c75c9139a3612f3d249072bf384dc4952968c331c1129e"
+    },
+    {
+      "source": "scripts\\action\\vector\\vector_integrity_check_v0002.py",
+      "destination": "scripts\\action\\vector\\vector_integrity_check_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "09f8be2731fa3f6a3e3be182465a6bbabf7b7b495aff4631bbf1d49fe5bcabf4"
+    },
+    {
+      "source": "scripts\\analyze_json_structure_v0002.py",
+      "destination": "scripts\\analyze_json_structure_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "0236f2b68e7ef21365ffb4e0dd6168b377ec714fb5d236b28e81aa869ad8fca1"
+    },
+    {
+      "source": "scripts\\anchor\\ingest_data_text_units_v0001.py",
+      "destination": "scripts\\anchor\\ingest_data_text_units_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "ca7ac65e607d34aa857771c21b78822b0f183709e8485f3a15ae40d0c838b088"
+    },
+    {
+      "source": "scripts\\anchor\\validate_ingest_payload_v0001.py",
+      "destination": "scripts\\anchor\\validate_ingest_payload_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "f1f8d9aa1e5a11440b953c60857cf55568d30cf779ad8eb0178a030024a53832"
+    },
+    {
+      "source": "scripts\\anchor\\verify_data_anchor_v0001.py",
+      "destination": "scripts\\anchor\\verify_data_anchor_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "9cfce0bedf400bb82c0c0a138bb6ec8c5c794c526ac8a0b9a923f82b53c0fa73"
+    },
+    {
+      "source": "scripts\\coarse_slice_conversations_v0001.py",
+      "destination": "scripts\\coarse_slice_conversations_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "d90182d27ef8f2b85c154da54cb7dea2eb4131bdb5981d0f3fd125105e2a1121"
+    },
+    {
+      "source": "scripts\\discover_data_v0001.py",
+      "destination": "scripts\\discover_data_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "42ac57632684e2260f59efd3b3edb65a486f3688b7f3c62f38ea20bb62458087"
+    },
+    {
+      "source": "scripts\\identify_file_type_v0002.py",
+      "destination": "scripts\\identify_file_type_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "5c514bfde88cbd9dd3e2818a8a4b68718d2f0dd5e7f3137a273a1b7e7c1ac609"
+    },
+    {
+      "source": "scripts\\import_conversation_slices_to_processed_v0001.py",
+      "destination": "scripts\\import_conversation_slices_to_processed_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "871cfcb43548a7615f0f099f913b8a6ede5e1bdab283bc64ea80c6a5a963bc1f"
+    },
+    {
+      "source": "scripts\\inventory_data_snapshot_v0001.py",
+      "destination": "scripts\\inventory_data_snapshot_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "54d551bc607dd188aa751c35dd87005cf9e18a55cecf6d85569d1b6dc2c87556"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\action_anchor_persistence_pipeline_v0001.py",
+      "destination": "scripts\\orchestration\\action\\action_anchor_persistence_pipeline_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "4ba2c7a28a1c6f247ad6fc7902205510d7fc3111cc995c11ff7fd7c2c0075696"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\action_anchor_persistence_pipeline_v0002.py",
+      "destination": "scripts\\orchestration\\action\\action_anchor_persistence_pipeline_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "2ecf90ffeca39fea33519a28007813d0f7d48a14d8f6cb718db6c4bc4b40ca83"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\action_anchor_persistence_pipeline_v0003.py",
+      "destination": "scripts\\orchestration\\action\\action_anchor_persistence_pipeline_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "21b483f256b956632453af831a084466947b72e1dc3e0cb198ce3bef4439990c"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\action_derivation_materialization_pipeline_v0001.py",
+      "destination": "scripts\\orchestration\\action\\action_derivation_materialization_pipeline_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "ce03e30dde3a2381da663a83175a441568ed4a565035216d75ceaae0ee4a2ef0"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\action_derivation_materialization_pipeline_v0002.py",
+      "destination": "scripts\\orchestration\\action\\action_derivation_materialization_pipeline_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "23afc6479f9b9fdc7fd5c108d275c8a72d8a96f0bb8955b3c66c1a4e92ddf131"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\action_derivation_materialization_pipeline_v0003.py",
+      "destination": "scripts\\orchestration\\action\\action_derivation_materialization_pipeline_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "c6883678cc13d59dd17d97de5e477fc6829859cf43b8e63d81f93af1dcd74177"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0001.py",
+      "destination": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "4a6acefd7753ca9b53b6a2fc048b27567fc0528385a211b4ea7060fcee844fea"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0002.py",
+      "destination": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "93861847ab0bc866ede10f4f4fcc136fca3528530a602a78eff4fb6439725565"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0004.py",
+      "destination": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0004.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "46b142e88b6110dfaf1fff1801134654eab1b68ac0425dbd05264ba3774148f7"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0005.py",
+      "destination": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0005.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "1b174ad82f040096606ff8d55056630914fafef3d3c702f9a08d756845728a49"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0006.py",
+      "destination": "scripts\\orchestration\\action\\data_action_chain_pipeline_v0006.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "c4826bba424a71a53ce17ab6f2463e550473dd1804de9072f59c6ecfd1bf9e52"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\structural_unit_governance_graph_pipeline_v0001.py",
+      "destination": "scripts\\orchestration\\action\\structural_unit_governance_graph_pipeline_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "96b2e5d2c85f04ba08b73d343f06133ceb562072c866f4b3c2e8273f57f0c8cf"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\structural_unit_governance_graph_pipeline_v0002.py",
+      "destination": "scripts\\orchestration\\action\\structural_unit_governance_graph_pipeline_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "8e7d8c2fc92eed7ab38a34c5c5c6c0c78631e83eaf8c945fa05efcee9629187d"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\vector_embedding_pipeline_v0001.py",
+      "destination": "scripts\\orchestration\\action\\vector_embedding_pipeline_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "a84c75f2193e6efdc85793e55583e9a5393267a539ab46726c092700934cac38"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\vector_embedding_pipeline_v0002.py",
+      "destination": "scripts\\orchestration\\action\\vector_embedding_pipeline_v0002.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "ef54d37a56973df642f5652b1e39ddb3b47c8a8ee694963701675a7bfcc3755e"
+    },
+    {
+      "source": "scripts\\orchestration\\action\\vector_embedding_pipeline_v0003.py",
+      "destination": "scripts\\orchestration\\action\\vector_embedding_pipeline_v0003.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "6adcb5ae92bd7c28f6148a21690dacd555f20ce81c1216ac6c6f33efd2b9e313"
+    },
+    {
+      "source": "scripts\\orchestration\\data\\data_admission_lineage_pipeline_v0001.py",
+      "destination": "scripts\\orchestration\\data\\data_admission_lineage_pipeline_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "37e056e8c83b2200e2c04f60cdd55d6841f9e96d429da2c88b4360aaa9b296b2"
+    },
+    {
+      "source": "scripts\\orchestration\\data\\data_admission_lineage_pipeline_v0002.py",
+      "destination": "scripts\\orchestration\\data\\data_admission_lineage_pipeline_v0002.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "03f6b41ffe7f1f400db452d78c46530b14c10c4555fd70bd7174670baad5e0f8"
+    },
+    {
+      "source": "scripts\\orchestration\\data\\data_discovery_parse_preparation_pipeline_v0001.py",
+      "destination": "scripts\\orchestration\\data\\data_discovery_parse_preparation_pipeline_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "63d41244ee140af02b3ecbe11ecbce581b1dc2ca1f5e3fde5b26a6de6685f13b"
+    },
+    {
+      "source": "scripts\\prepare_json_parse_task_v0001.py",
+      "destination": "scripts\\prepare_json_parse_task_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "9abe0ad54f02a8d733c14cb1c6a1908cac6f63a98488cdaf0c57afc580c1db56"
+    },
+    {
+      "source": "scripts\\register_understanding_lineage_v0001.py",
+      "destination": "scripts\\register_understanding_lineage_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "d94b0921a9b76b94c3c5f9fd7e1a5bd6423fb54420510ae6c6ae4763d4d8912b"
+    },
+    {
+      "source": "scripts\\snapshot_path_resolver_v0001.py",
+      "destination": "scripts\\snapshot_path_resolver_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "d4685bc7619a160f9cf5db51c8951b7c53bf31f6fcdeb56cbd625464ce0904fb"
+    },
+    {
+      "source": "scripts\\tools\\init_data_schema_v0001.py",
+      "destination": "scripts\\tools\\init_data_schema_v0001.py",
+      "discovery": "runtime_manifest_or_entry",
+      "sha256": "a3f438a4f5f883d7c3bedce7e0961bc71fc428905837406e3826c82058282393"
+    },
+    {
+      "source": "scripts\\vector\\embedding_lifecycle_guard_v0001.py",
+      "destination": "scripts\\vector\\embedding_lifecycle_guard_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "ed4ae58f569f3950f3ffc94fb2bae5a4c5e523a7697e91a7a86f237d1f2e5539"
+    },
+    {
+      "source": "scripts\\vector\\embedding_writer_v0001.py",
+      "destination": "scripts\\vector\\embedding_writer_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "6cf72818742677f43357c6485949b31a2750d76530c1f6e4b7a68a5c6eddeef2"
+    },
+    {
+      "source": "scripts\\vector\\vector_integrity_check_v0001.py",
+      "destination": "scripts\\vector\\vector_integrity_check_v0001.py",
+      "discovery": "recursive_source_reference",
+      "sha256": "0558ac041afbaa5c86bf635c15e9ec1b0fec5f2d994560c53c9fb63709862afb"
+    }
+  ],
+  "config_examples": [
+    {
+      "source": "config\\action\\config\\action_data_neo4j_connection_config_v0001.yml",
+      "destination": "config\\action\\config\\action_data_neo4j_connection_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "3bb8ad1cb0c501f4ace7587058287f1d2bfefdda62738bee6c53f8d0e6edb895",
+      "example_sha256": "ccf13cad9d5ed5841b9ff48c0b982d00803f475bc8091c645cff34cb730c54ef"
+    },
+    {
+      "source": "config\\action\\config\\action_data_neo4j_schema_config_v0001.yml",
+      "destination": "config\\action\\config\\action_data_neo4j_schema_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "4ba17a3fa8527965e5bd8c3d863f161817b40511be613067f0d6d8380ed06a84",
+      "example_sha256": "35bd8db9d37b581e4d6b7e412933a57e1b5c2eab6e44d7d43787828943f583fb"
+    },
+    {
+      "source": "config\\action\\config\\decide_unit_prominence_policy_v0001.yml",
+      "destination": "config\\action\\config\\decide_unit_prominence_policy_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "a0aadb9758bd58774d5bb7d8425f8ef311359bcd3c3488ee57dd8669046a48c4",
+      "example_sha256": "3df41c877b077473a7b0afd4a3d929ba695081041cf2fb158eb74e358e3dbfba"
+    },
+    {
+      "source": "config\\action\\config\\duckdb_schema_config_v0001.yml",
+      "destination": "config\\action\\config\\duckdb_schema_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "cfd31afec1ede23755300b577eb0a392fb5059093749cebb79d8a8b6adc369d2",
+      "example_sha256": "f61f1d368d99e65c71928da68874fc4949e52699bd91b6f93e8234b3820cffc5"
+    },
+    {
+      "source": "config\\action\\config\\embedding_generator_config_v0002.yml",
+      "destination": "config\\action\\config\\embedding_generator_config_v0002.example.yml",
+      "template_only": true,
+      "source_sha256": "d06fc9f2b513542ae4d767dc11c0c584f93b4e4f5e6b44cdcd7f2f74314bb533",
+      "example_sha256": "09f345d9ac2871d7173ba60152e7edce3ea5c4c73780d0c83776ec9c94d24fd6"
+    },
+    {
+      "source": "config\\action\\config\\filter_structural_noise_v0001.yml",
+      "destination": "config\\action\\config\\filter_structural_noise_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "3502a151bb97af3feeb10f5fc95ba05f5f83f37bc2240de9ed9c60a2e041ad4a",
+      "example_sha256": "417f24211b2411cf7925b53e0dc6fdaca1faeefb0f77bf4d7f7309546fb2f061"
+    },
+    {
+      "source": "config\\action\\config\\ingest_attribute_units_config_v0001.yml",
+      "destination": "config\\action\\config\\ingest_attribute_units_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "8a8b2f54f9cd7f2b22dd2739b330f305b8d4a050ec5931defe10f6085f546acf",
+      "example_sha256": "a33896961b6525db6b9881b0387dbfed65a27b465f6f41bae624d5dd4cce8e44"
+    },
+    {
+      "source": "config\\action\\config\\ingest_concept_units_config_v0001.yml",
+      "destination": "config\\action\\config\\ingest_concept_units_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "176c265cf31759d435282b5a39ce684118878a9b8ba0e3c8e4888a78f39be3af",
+      "example_sha256": "45fa69f8be6998d1c0e456b27f9c7723c948d5b50260af69e297cd517fb49042"
+    },
+    {
+      "source": "config\\action\\config\\ingest_instance_units_config_v0001.yml",
+      "destination": "config\\action\\config\\ingest_instance_units_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "480bc2aa57b51f9a086f9754aec6344344fc66bdceb50eeb2ddef22dd204baca",
+      "example_sha256": "c6efd793d685cc330b2f849e86e82c121ddf7158122ee920cae52942624a6144"
+    },
+    {
+      "source": "config\\action\\config\\ingest_instance_units_semantic_config_v0001.yml",
+      "destination": "config\\action\\config\\ingest_instance_units_semantic_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "f4e7e142e81473b2fbc5072b4fb9ab1ada96b0f18d86063d230eff0130897b52",
+      "example_sha256": "b9e880f94c4fc0a9b9d8f6a01d313bd4b6c5ea43869f94840c0d3d572dfb0f36"
+    },
+    {
+      "source": "config\\action\\config\\language_parse_lite_policy_v0002.yml",
+      "destination": "config\\action\\config\\language_parse_lite_policy_v0002.example.yml",
+      "template_only": true,
+      "source_sha256": "381f7fa9c26decba212a66c242e212b01afd300ad73d672bea1ab3fea20657e6",
+      "example_sha256": "cfa1eab39c7a1fca40e491fe00c027bccb5542ef70c47ef881a6b41ede9b66c8"
+    },
+    {
+      "source": "config\\action\\config\\normalize_unit_variants_policy_v0001.yml",
+      "destination": "config\\action\\config\\normalize_unit_variants_policy_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "e626714ce6977606512ffe42283bd53f487bcbb6614cc8bd542a2d0460afa7b4",
+      "example_sha256": "4d34d04c669837dc4c47cdf536c6dbd664cb8991955e500d01bc6c1a4ead31ed"
+    },
+    {
+      "source": "config\\action\\config\\parse_eligibility_policy_v0002.yml",
+      "destination": "config\\action\\config\\parse_eligibility_policy_v0002.example.yml",
+      "template_only": true,
+      "source_sha256": "b06c245f6deeb05c39e3149ef8441a8fab3fec379823abe81a2e5606b9fccaf4",
+      "example_sha256": "a1eb81df5354215acc2209105ca576decc1af3108d21c3ea740e0dcaf196a967"
+    },
+    {
+      "source": "config\\action\\config\\sql_writer_config_v0001.yml",
+      "destination": "config\\action\\config\\sql_writer_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "98afa61772db1b0f9bb3f5c8b8caebcc4948814fef11f580c595cb4ccbf205a8",
+      "example_sha256": "b8cde9b1f247a2022987d7ad2261a26d999902d40cd1835977a77312ecb4221f"
+    },
+    {
+      "source": "config\\action\\config\\validate_unit_boundaries_v0001.yml",
+      "destination": "config\\action\\config\\validate_unit_boundaries_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "021e8b89e804ba5fe4aab902cf0f01a0907f3876f47075abee1f06cc17516b11",
+      "example_sha256": "73e63d48c7afde0936ea9b6010bff355e6acfcc0d871d135b12249e77e82b95c"
+    },
+    {
+      "source": "config\\action\\init_schema\\action_data_duckdb_schema_config_v0001.yml",
+      "destination": "config\\action\\init_schema\\action_data_duckdb_schema_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "a78d9f690036698c689b7d9e307f5535469a092976b4e0ec3d0fe7e385fcf9cb",
+      "example_sha256": "22e66965db4106223261e902a8b3509f662298163a43fd5498379e4d70353b3c"
+    },
+    {
+      "source": "config\\action\\init_schema\\action_data_sql_schema_config_v0001.yml",
+      "destination": "config\\action\\init_schema\\action_data_sql_schema_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "98321fe5d202fac54d5d86c31aa5386b6c24853f21a9450353b9cf4b98a496cc",
+      "example_sha256": "4810c8c310bccf6bd4767f080d82c3d635511e8999f93702d1ac384fef39fa06"
+    },
+    {
+      "source": "config\\decide_unit_prominence_policy_v0001.yml",
+      "destination": "config\\decide_unit_prominence_policy_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "9216676c2b8087ca864c8f9f896251bf3f0b633af1afdd113b677d05c8423f92",
+      "example_sha256": "e00ab8539b3350a3ed4a5efc295c5373006fe19ef227b154937af98e2f2465b2"
+    },
+    {
+      "source": "config\\duckdb_schema_config_v0001.yml",
+      "destination": "config\\duckdb_schema_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "217de9ca1087e2220a52a78cf0b52c727cd89e5deec2102409243b68e783d904",
+      "example_sha256": "8a5c2ae828b4adb8196b2e98190faf97183526f03b882c8fd382895be691f440"
+    },
+    {
+      "source": "config\\embedding_generator_config_v0002.yml",
+      "destination": "config\\embedding_generator_config_v0002.example.yml",
+      "template_only": true,
+      "source_sha256": "d06fc9f2b513542ae4d767dc11c0c584f93b4e4f5e6b44cdcd7f2f74314bb533",
+      "example_sha256": "09f345d9ac2871d7173ba60152e7edce3ea5c4c73780d0c83776ec9c94d24fd6"
+    },
+    {
+      "source": "config\\filter_structural_noise_v0001.yml",
+      "destination": "config\\filter_structural_noise_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "9704d994bd1f6ebacc21145ec11288605bf3bf43659a72688d167e1b5d10ca15",
+      "example_sha256": "ca9062b93697a0854f56bf9766dba3df2711f0c557872e84ceb91fce4a1118cd"
+    },
+    {
+      "source": "config\\ingest_attribute_units_config_v0001.yml",
+      "destination": "config\\ingest_attribute_units_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "8a8b2f54f9cd7f2b22dd2739b330f305b8d4a050ec5931defe10f6085f546acf",
+      "example_sha256": "a33896961b6525db6b9881b0387dbfed65a27b465f6f41bae624d5dd4cce8e44"
+    },
+    {
+      "source": "config\\ingest_concept_units_config_v0001.yml",
+      "destination": "config\\ingest_concept_units_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "176c265cf31759d435282b5a39ce684118878a9b8ba0e3c8e4888a78f39be3af",
+      "example_sha256": "45fa69f8be6998d1c0e456b27f9c7723c948d5b50260af69e297cd517fb49042"
+    },
+    {
+      "source": "config\\ingest_instance_units_config_v0001.yml",
+      "destination": "config\\ingest_instance_units_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "480bc2aa57b51f9a086f9754aec6344344fc66bdceb50eeb2ddef22dd204baca",
+      "example_sha256": "c6efd793d685cc330b2f849e86e82c121ddf7158122ee920cae52942624a6144"
+    },
+    {
+      "source": "config\\language_parse_lite_policy_v0002.yml",
+      "destination": "config\\language_parse_lite_policy_v0002.example.yml",
+      "template_only": true,
+      "source_sha256": "2d4b1ca335086347652035273753bb6663c25009741f9517b362bf22ffc8e54e",
+      "example_sha256": "a0885a464c1783df82d139e8ecea7c746640cef795dce60c93f64c8bffa516aa"
+    },
+    {
+      "source": "config\\normalize_unit_variants_policy_v0001.yml",
+      "destination": "config\\normalize_unit_variants_policy_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "e626714ce6977606512ffe42283bd53f487bcbb6614cc8bd542a2d0460afa7b4",
+      "example_sha256": "4d34d04c669837dc4c47cdf536c6dbd664cb8991955e500d01bc6c1a4ead31ed"
+    },
+    {
+      "source": "config\\parse_eligibility_policy_v0002.yml",
+      "destination": "config\\parse_eligibility_policy_v0002.example.yml",
+      "template_only": true,
+      "source_sha256": "b06c245f6deeb05c39e3149ef8441a8fab3fec379823abe81a2e5606b9fccaf4",
+      "example_sha256": "a1eb81df5354215acc2209105ca576decc1af3108d21c3ea740e0dcaf196a967"
+    },
+    {
+      "source": "config\\sql_writer_config_v0001.yml",
+      "destination": "config\\sql_writer_config_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "0a28fd4ee1a01d7a90c69654c8c873584f798f598e07e19d843a4918500575ed",
+      "example_sha256": "f620f214c817e889e91bfbd0cf3af6b79314c480de75971a5f4c1cb831b7abf1"
+    },
+    {
+      "source": "config\\validate_unit_boundaries_v0001.yml",
+      "destination": "config\\validate_unit_boundaries_v0001.example.yml",
+      "template_only": true,
+      "source_sha256": "829b83df904249ce22db2fe8ebd8b7d65208720d40340fc6d2ca0db88d84869e",
+      "example_sha256": "388d0e83a64befc1b915123cd1b926af263e8ebcc8a690e4e8f907e5e3899ae4"
+    }
+  ],
+  "sample_data": [
+    {
+      "source": "data\\data_raw\\test\\reliable_pipeline_fake_conversations_v0001.json",
+      "destination": "data\\data_raw\\test\\reliable_pipeline_fake_conversations_v0001.json",
+      "sha256": "d9b18e21b13558c140d9f2f1d75d91d3fdc59a4f124460bdc0016339c6a88cd8"
+    }
+  ],
+  "excluded": [
+    "AGENTS_INTERNAL_DO_NOT_RELEASE.md",
+    "LICENSE_INTERNAL_DO_NOT_RELEASE.md",
+    ".venv",
+    ".venv_broken_backup_*",
+    "temp",
+    "staging",
+    "logs",
+    "real databases",
+    "database backups",
+    "real data",
+    "model weights",
+    "API keys",
+    "call logs"
+  ],
+  "release_support_files": [
+    "README.md",
+    "README_EN.md",
+    "assets/baigong-logo.png",
+    ".gitignore",
+    "AGENTS.md",
+    "actioning/README.md",
+    "launch_installer.cmd",
+    "run_demo_test.ps1",
+    "installer/installer_gui_v0001.py",
+    "sql/README.md",
+    "docs/acceptance/acceptance_report_v0001.json",
+    "FILE_LIST.md",
+    "LICENSE",
+    "requirements/requirements-data-action-demo.txt",
+    "requirements/requirements-neo4j-optional.txt",
+    "requirements/README.md",
+    "NOTICE"
+  ],
+  "release_artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "211a1e8d4b91ce83c8e9a5aff24ed88c80be6466c7d99c0566382b5bf07023dc"
+    },
+    {
+      "path": "README_EN.md",
+      "sha256": "1f645d90769beceebf806c505cd0b98d88e203b5056eab56742619ff562e36cc"
+    },
+    {
+      "path": "assets/baigong-logo.png",
+      "sha256": "94afc21f74f259dab7362bfea33399c5839ee98e010bb446aed727683ce76145"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "5218e1512c1b75a66a8fe673cda9e924bff5473a84d0b83216c6bd70c77249d6"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "actioning/README.md",
+      "sha256": "cd56d60f386abda8907aaed2b729604ff901cb02d2d8650e0215b170bbee0614"
+    },
+    {
+      "path": "launch_installer.cmd",
+      "sha256": "91d6131793b2d78afc9bff523c8b1150adbb048b746cdccdb600e292c9408027"
+    },
+    {
+      "path": "run_demo_test.ps1",
+      "sha256": "727fd611bda6da88e4a9a21b7ccb26448b74d2eab3a799be1c2ef9c664e4aaf4"
+    },
+    {
+      "path": "installer/installer_gui_v0001.py",
+      "sha256": "6af5b73a53e8fdb23352a98b087969b25a045709f8654cc0a1bf3df885dc657d"
+    },
+    {
+      "path": "sql/README.md",
+      "sha256": "2e8a42c8a125f587f80a0182f1abcdde90d98395bc099c8a89a3fbe7a1ccfd86"
+    },
+    {
+      "path": "docs/acceptance/acceptance_report_v0001.json",
+      "sha256": "f9b84c4f7af031b06e79fc9cde1bea4779158e4026ed4c1526349957b2594ded"
+    },
+    {
+      "path": "FILE_LIST.md",
+      "sha256": "431357299d14fd1571d5e57498074eb68504e0d09dd12240751d9cc41c5d926b"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "requirements/requirements-data-action-demo.txt",
+      "sha256": "0f3f829e3f45b6faeb8d0b66e4cbcced36d0829fe3d3cb37d5aa9bbee987132e"
+    },
+    {
+      "path": "requirements/requirements-neo4j-optional.txt",
+      "sha256": "a0b10732563123de83ceaf68adb535d7ba7b628851620cd1da543df5a0982a1c"
+    },
+    {
+      "path": "requirements/README.md",
+      "sha256": "4989bfbee254456ae470e6172a06af2b49d91cd23b81497de0d0005894a6faa6"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "ea6a63635b31135ea2f42df84afa35da8d19980fcdc8376d7c909642d9613d30"
+    }
+  ]
+}

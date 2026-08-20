@@ -1,0 +1,79 @@
+meta:
+  header_type: meta
+  source: manual_design
+  date: 2026-03-07
+  theme: [embedding_generator, vector_pipeline, config]
+  tags: [config, vector, bge-m3, v0002]
+  notes: "向量生成器物理与模型配置，负责解耦具体的大模型调用逻辑与业务流"
+  status: active
+  updatable: true
+
+  lineage:
+    governed_by:
+      - 向量计算与版本控制规范_v0002
+      - 向量库层手册_v0003
+
+  managed_by: embedding_generator_v0003.py
+  registered_by: manual_registry_v0001.py
+  updated_via: manual_edit
+
+# ============================================================
+# embedding_generator_config_v0002.yml
+# 向量生成器运行参数与契约映射配置
+# ============================================================
+
+version: v0002
+
+# ------------------------------------------------------------
+# 引擎类型选择 (支持 "local", "http" 或 "flag_embedding")
+# - local: 直接在 Python 中 import sentence_transformers 加载本地模型（默认）
+# - http: 通过标准的 OpenAI RESTful API 格式调用本地/远程服务
+# - flag_embedding: 在 Python 脚本中直接 import FlagEmbedding 加载本地权重
+# ------------------------------------------------------------
+backend:
+  type: "local"
+  # 本地模型路径或 HuggingFace 模型名（当 type == "local" 时生效）
+  model_name: "BAAI/bge-m3"
+  # 推理设备（当 type == "local" 时生效）
+  device: "cuda"
+  # 每次 model.encode() forward pass 的文本条数（控制 GPU 显存峰值）
+  # RTX 4060 (8GB) + bge-m3 保守值: 4~8，长文本多建议 4
+  encode_batch_size: 4
+
+# ------------------------------------------------------------
+# API 通讯配置 (当 backend.type == "http" 时生效)
+# ------------------------------------------------------------
+api:
+  # 假设你使用 vLLM 或 Infinity 将 BGE-M3 部署在了本地 8000 端口
+  endpoint: "http://127.0.0.1:8000/v1/embeddings"
+  # 读取鉴权 Token 的环境变量名（本地免密则留空）
+  auth_token_env: ""
+  timeout: 120
+
+# ------------------------------------------------------------
+# 契约对齐参数 (极其重要)
+# 这里的参数将被 Generator 读取，并严格打入生成的 JSONL 契约中，
+# 供 contract_validator 查验。
+# ------------------------------------------------------------
+model:
+  # 模型名称 (必须与 API 期望的 model 字段一致，或本地路径)
+  name: "BAAI/bge-m3"
+  # BGE-M3 的标准 Dense (稠密) 向量维度
+  dimension: 1024
+  # 模型版本锚定
+  version: "v1.0"
+  # Tokenizer 版本锚定
+  tokenizer_version: "bge-m3-tokenizer"
+  # 当前的生成策略版本
+  policy_version: "v0001"
+
+# ------------------------------------------------------------
+# 运行调度参数
+# ------------------------------------------------------------
+runtime:
+  # 每次从 SQL 提取的文本条数（内存侧批次大小）
+  batch_size: 50
+  # 网络或推理失败时的最大重试次数
+  max_retries: 3
+  # 重试的基础退避延迟（秒）
+  retry_delay: 5

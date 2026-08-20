@@ -1,0 +1,7 @@
+# Direct runtime dependencies verified by the Data-Action demo environment.
+# Install a suitable CPU or CUDA build of PyTorch separately before running
+# the local BGE-M3 embedding path.
+PyYAML==6.0.3
+duckdb==1.4.4
+chromadb==1.5.2
+sentence-transformers==5.2.3

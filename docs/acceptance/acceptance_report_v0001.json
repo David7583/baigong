@@ -1,0 +1,77 @@
+{
+  "schema_version": "baigong_sanitized_acceptance_summary_v0001",
+  "generated_on": "2026-08-20",
+  "evidence_type": "sanitized_acceptance_summary",
+  "source_runtime_artifacts_included": false,
+  "scope": "Baigong Data-Action demo release acceptance",
+  "environment": {
+    "platform": "Windows",
+    "python": "3.12.7",
+    "torch": "2.9.0+cu126",
+    "cuda_runtime": "12.6",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "PyYAML": "6.0.3",
+    "duckdb": "1.4.4",
+    "chromadb": "1.5.2",
+    "sentence_transformers": "5.2.3"
+  },
+  "input": {
+    "path": "data/data_raw/test/reliable_pipeline_fake_conversations_v0001.json",
+    "synthetic": true,
+    "sha256": "d9b18e21b13558c140d9f2f1d75d91d3fdc59a4f124460bdc0016339c6a88cd8"
+  },
+  "acceptance_runs": [
+    {
+      "kind": "dry_run",
+      "result": "passed"
+    },
+    {
+      "kind": "mock_full_chain",
+      "run_id": "demo_mock_002",
+      "result": "passed",
+      "final_status": "ready_for_data_discovery",
+      "child_completion_count": 5,
+      "sqlite": {
+        "concept_units": 3,
+        "instance_units": 3,
+        "unit_attributes": 0,
+        "ingestion_run_log": 1
+      },
+      "duckdb": {
+        "sync_log": 3,
+        "concept_latest": 3,
+        "concept_sync": 3,
+        "instance_latest": 3,
+        "instance_sync": 3,
+        "attribute_rows": 0
+      },
+      "chromadb_vectors": 6
+    },
+    {
+      "kind": "real_bge_m3_small_batch",
+      "run_id": "demo_bge_001",
+      "result": "passed",
+      "final_status": "ready_for_data_discovery",
+      "finished_at": "2026-08-20T05:59:36Z",
+      "child_completion_count": 5,
+      "model": "BAAI/bge-m3",
+      "mock_api": false,
+      "embedding_dimension": 1024,
+      "concept_vectors": 3,
+      "instance_vectors": 3,
+      "chromadb_vectors": 6
+    }
+  ],
+  "release_boundaries": {
+    "formal_databases_included": false,
+    "active_configs_included": false,
+    "runtime_logs_included": false,
+    "model_weights_included": false,
+    "neo4j_status": "not_tested_optional_branch"
+  },
+  "limitations": [
+    "Original runtime manifests were deliberately excluded during release sanitization because they contained machine-local absolute paths.",
+    "This summary records observed acceptance results and is integrity-protected by DEPENDENCY_MANIFEST.json, but it is not a substitute for the original runtime manifests.",
+    "Direct dependency versions are pinned; transitive wheel hashes are not locked."
+  ]
+}

@@ -1,0 +1,48 @@
+.venv/
+.venv*/
+__pycache__/
+*.py[cod]
+
+# Local configuration copied from templates
+config/**/*.yml
+config/**/*.yaml
+config/**/*.json
+!config/**/*.example.yml
+!config/**/*.example.yaml
+!config/**/*.example.json
+
+# Secrets and environment files
+.env
+.env.*
+*.pem
+*.key
+*api_key*
+*api_keys*
+*secret*
+*credential*
+
+# Runtime data and evidence
+temp/
+staging/
+logs/
+data/parse_workspace/
+data/reports/
+data/data_raw/input/
+data_processed/
+scripts/orchestration/outputs/
+scripts/_logs/
+
+# Local databases and vector/model state
+*.db
+*.db-*
+*.duckdb
+*.sqlite
+*.sqlite3
+chromadb/
+models/
+derivation/**/*.parquet
+derivation/**/*.jsonl
+
+# Keep the supplied artificial sample
+!data/data_raw/test/
+!data/data_raw/test/reliable_pipeline_fake_conversations_v0001.json
