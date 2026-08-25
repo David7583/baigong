@@ -1,10 +1,11 @@
 # 百工发布文件清单
 
-本清单由 Git 候选文件机械生成；运行产物、本机活动配置、数据库、密钥、模型权重和虚拟环境不在发布范围内。
+本清单由 Git 发布文件机械生成；运行产物、本机活动配置、数据库、密钥、模型权重和虚拟环境不在发布范围内。
 
-- 当前候选入口：`scripts/orchestration/action/data_action_chain_pipeline_v0009.py`
+- 当前发布：`v0.2.0`
+- 当前入口：`scripts/orchestration/action/data_action_chain_pipeline_v0009.py`
 - 回退入口：`scripts/orchestration/action/data_action_chain_pipeline_v0006.py`
-- 文件：165 个（清单文件自身除外）
+- 文件：166 个（清单文件自身除外）
 - 脚本：112 个
 - 配置模板：29 个
 - 入口契约：4 个
@@ -16,6 +17,7 @@
 - `actioning/README.md`
 - `AGENTS.md`
 - `assets/baigong-logo.png`
+- `CITATION.cff`
 - `config/action/config/action_data_neo4j_connection_config_v0001.example.yml`
 - `config/action/config/action_data_neo4j_schema_config_v0001.example.yml`
 - `config/action/config/decide_unit_prominence_policy_v0001.example.yml`
