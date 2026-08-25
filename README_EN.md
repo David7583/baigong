@@ -11,7 +11,11 @@
   <code>Traceable</code> · <code>Auditable</code> · <code>Local-first</code> ·
   <code>Python 3.12</code> · <code>Windows</code> · <code>Apache-2.0</code>
 </p>
-
+<p align="center">
+  <a href="https://doi.org/10.5281/zenodo.22093153">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22093153.svg" alt="DOI">
+  </a>
+</p>
 **Baigong** is a Data–Action–Data demonstration system for governing local AI data and execution.
 Starting from a synthetic JSON sample, it runs data discovery, admission and lineage registration,
 structural governance, SQLite identity anchoring, DuckDB analytical materialization, BGE-M3
