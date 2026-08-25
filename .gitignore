@@ -10,6 +10,8 @@ config/**/*.json
 !config/**/*.example.yml
 !config/**/*.example.yaml
 !config/**/*.example.json
+!config/contracts/
+!config/contracts/*.json
 
 # Secrets and environment files
 .env
@@ -46,3 +48,4 @@ derivation/**/*.jsonl
 # Keep the supplied artificial sample
 !data/data_raw/test/
 !data/data_raw/test/reliable_pipeline_fake_conversations_v0001.json
+!data/data_raw/test/adapter_timestamp_fake_conversations_v0002.json
