@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Baigong"
+type: software
+authors:
+  - family-names: "Yang"
+    given-names: "Ruixin"
+    alias: "David7583"
+repository-code: "https://github.com/David7583/baigong"
+url: "https://github.com/David7583/baigong"
+license: "Apache-2.0"
+abstract: >-
+  Baigong is a local-first, traceable, auditable, and rollback-oriented
+  Data-Action-Data harness for AI agents and AI governance.
+keywords:
+  - AI agents
+  - AI governance
+  - agent harness
+  - data lineage
+  - traceability
+  - local AI
