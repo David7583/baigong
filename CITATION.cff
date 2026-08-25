@@ -11,6 +11,7 @@ authors:
 repository-code: "https://github.com/David7583/baigong"
 url: "https://github.com/David7583/baigong"
 license: "Apache-2.0"
+doi: "10.5281/zenodo.22093154"
 abstract: >-
   Baigong is a local-first, traceable, auditable, and rollback-oriented
   Data-Action-Data harness for AI agents and AI governance.
