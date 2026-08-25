@@ -1,0 +1,51 @@
+{
+  "schema_version": "baigong_public_acceptance_report_v0002",
+  "tested_at": "2026-08-25T07:22:32Z",
+  "candidate_entry": "scripts/orchestration/action/data_action_chain_pipeline_v0009.py",
+  "rollback_entry": "scripts/orchestration/action/data_action_chain_pipeline_v0006.py",
+  "sample": "data/data_raw/test/adapter_timestamp_fake_conversations_v0002.json",
+  "data_classification": "synthetic_public_test_data",
+  "results": {
+    "python_compileall": "passed",
+    "powershell_parse": "passed",
+    "entry_help": "passed",
+    "dry_run": {
+      "status": "dry-run",
+      "configs_checked": 12,
+      "database_write_performed": false
+    },
+    "mock_full_chain": {
+      "status": "completed",
+      "readiness": "ready_for_data_discovery",
+      "conversations": 2,
+      "messages": 4,
+      "text_units": 4,
+      "timestamp_annotations": 4,
+      "timestamp_status": {
+        "resolved": 4,
+        "missing": 0,
+        "ambiguous": 0,
+        "invalid": 0
+      },
+      "canonical_counts_reconciled": true,
+      "raw_unchanged": true,
+      "database_validation": "passed",
+      "child_completion_manifests": 5,
+      "vector_mode": "mock",
+      "vector_sources": [
+        "concept",
+        "instance"
+      ]
+    },
+    "windows_path_guard": {
+      "unsafe_deep_path": "rejected_before_pipeline_write",
+      "short_release_path": "passed"
+    }
+  },
+  "limitations": [
+    "This report contains no real user data, credentials, databases, model weights, or machine-local absolute paths.",
+    "The v0009 candidate acceptance used mock embeddings; the prior v0001 report retains the small real BGE-M3 acceptance evidence.",
+    "Neo4j remains outside the accepted path.",
+    "Traditional Windows path limits require a short extraction directory; the launcher now checks a projected evidence path before writing."
+  ]
+}

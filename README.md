@@ -59,24 +59,26 @@ Action Return
 - **版本可核验**：总入口固定子脚本版本，发布清单为脚本、配置模板和样例记录 SHA-256。
 - **动作受治理**：数据库写入、真实模型调用和可选 Neo4j 写入需要显式确认；dry-run 可以提前暴露配置与 schema 问题。
 - **失败可诊断**：错误以结构化 JSON 返回，不把部分失败伪装成完整成功，也不静默切换模型或数据库。
-- **结果可回退**：测试写入被限制在 `temp/`；`v0005` 保留为代码回退入口，`v0006` 作为当前受检入口。
+- **结果可回退**：测试写入被限制在 `temp/`；`v0006` 保留为代码回退入口，`v0009` 作为当前候选入口。
 
 这里的“回退”不是承诺自动撤销所有外部数据库事务，而是确保代码版本、测试数据、执行证据和
 写入边界足够清楚，使失败能够被定位、隔离、重放或由操作者安全撤回。
 
 ## 当前状态
 
-- 总入口：`scripts/orchestration/action/data_action_chain_pipeline_v0006.py`
-- 回退入口：`scripts/orchestration/action/data_action_chain_pipeline_v0005.py`
+- 总入口：`scripts/orchestration/action/data_action_chain_pipeline_v0009.py`
+- 回退入口：`scripts/orchestration/action/data_action_chain_pipeline_v0006.py`
 - 已验证平台：Windows、Python 3.12.7
 - 已验证 GPU：NVIDIA GeForce RTX 4060 Laptop GPU
 - 已验证 PyTorch：`2.9.0+cu126`
 - 已验证主链：SQLite、DuckDB、BGE-M3、Chroma
+- v0009 新增：完整入口契约、格式识别与适配、结构解析闸门、原始消息时间戳补充标注
 - Neo4j：代码和配置模板保留，但属于尚未验收的可选分支
 
 最近一次隔离验收包括 dry-run、mock 全链路和真实 BGE-M3 小批量测试。真实模型测试生成了
 6 个 1024 维向量，最终状态为 `ready_for_data_discovery`。去敏后的验收摘要见
-[`docs/acceptance/acceptance_report_v0001.json`](docs/acceptance/acceptance_report_v0001.json)。
+[`docs/acceptance/acceptance_report_v0001.json`](docs/acceptance/acceptance_report_v0001.json)。v0009 的人工时间样例、入口适配与 mock 全链验收见
+[`docs/acceptance/acceptance_report_v0002.json`](docs/acceptance/acceptance_report_v0002.json)。
 
 ## 快速安装
 
@@ -162,6 +164,8 @@ Get-ChildItem .\config -Recurse -Filter *.example.yml | ForEach-Object {
 .\run_demo_test.ps1 -Mode Mock
 ```
 
+Windows 传统路径上限仍可能影响过深的解压目录。启动器会在写入前估算 v0009 的最长证据路径并明确拒绝风险运行；如触发提示，请将项目放到更短的目录，批次名也应保持简短。
+
 只查看完整命令而不创建文件：
 
 ```powershell
@@ -171,7 +175,7 @@ Get-ChildItem .\config -Recurse -Filter *.example.yml | ForEach-Object {
 查看总入口的全部参数：
 
 ```powershell
-python .\scripts\orchestration\action\data_action_chain_pipeline_v0006.py --help
+python .\scripts\orchestration\action\data_action_chain_pipeline_v0009.py --help
 ```
 
 `--dry-run` 会解析活动配置、检查路径和 Action 业务库 schema，但不会执行流水线：
@@ -234,7 +238,7 @@ python .\scripts\orchestration\action\data_action_chain_pipeline_v0006.py --help
 - `FILE_LIST.md` 提供人工可读的发布文件清单。
 - Logo 保留原始 C2PA 内容凭证，其中包含生成工具的来源声明与签名元数据；该凭证不作为代码执行，也不包含项目所有者身份。
 - 去敏验收摘要不包含带本机绝对路径的原始运行清单；这一限制已在摘要中明确记录。
-- `v0006` 是当前入口；`v0005` 保留为无需删除文件的回退方式。
+- `v0009` 是当前候选入口；`v0006` 保留为无需删除文件的回退方式。
 - 每次真实运行还应保留总 completion manifest、子流程清单、Action lineage 和 Action Return 清单；发布文件完整性与运行证据完整性分别检查。
 - 运行产物、活动配置和虚拟环境由 `.gitignore` 排除。
 

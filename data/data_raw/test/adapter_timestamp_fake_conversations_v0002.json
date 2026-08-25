@@ -1,0 +1,49 @@
+[
+  {
+    "uuid": "synthetic-conversation-v2-0001",
+    "name": "适配器与来源时间测试",
+    "created_at": "2026-08-16T08:00:00+08:00",
+    "updated_at": "2026-08-16T08:02:00+08:00",
+    "chat_messages": [
+      {
+        "uuid": "synthetic-message-v2-0001-user",
+        "sender": "human",
+        "text": "这是一条人工构造的入口适配与来源时间测试消息。",
+        "created_at": "2026-08-16T08:00:10+08:00"
+      },
+      {
+        "uuid": "synthetic-message-v2-0001-assistant",
+        "sender": "assistant",
+        "text": "该消息仅用于公开 Demo，不包含真实用户数据。",
+        "created_at": "2026-08-16T08:00:20+08:00"
+      }
+    ]
+  },
+  {
+    "uuid": "synthetic-conversation-v2-0002",
+    "name": "完整坐标与时间旁表测试",
+    "created_at": "2026-08-16T09:00:00+08:00",
+    "updated_at": "2026-08-16T09:03:00+08:00",
+    "chat_messages": [
+      {
+        "uuid": "synthetic-message-v2-0002-user",
+        "sender": {
+          "role": "user",
+          "name": "synthetic-user"
+        },
+        "text": "请验证 canonical 路径、value_index 和消息时间能够保持对应。",
+        "created_at": "2026-08-16T09:00:30+08:00"
+      },
+      {
+        "uuid": "synthetic-message-v2-0002-assistant",
+        "sender": {
+          "role": "assistant",
+          "name": "synthetic-assistant"
+        },
+        "text": "验证结果必须能够回到人工样例中的消息标识和原始时间字段。",
+        "created_at": "2026-08-16T09:01:00+08:00",
+        "updated_at": "2026-08-16T09:01:30+08:00"
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "schema_version": "source_timestamp_rules_v0001",
+  "rule_version": "v0001",
+  "profiles": [
+    {
+      "name": "chatgpt_export_list",
+      "conversation_container_path": "/",
+      "parser_text_path": "/*/mapping/*/message/content/parts/*"
+    },
+    {
+      "name": "wrapped_conversations",
+      "conversation_container_path": "/conversations",
+      "parser_text_path": "/conversations/*/mapping/*/message/content/parts/*"
+    },
+    {
+      "name": "synthetic_snapshots",
+      "conversation_container_path": "/snapshots/*/conversations",
+      "parser_text_path": "/snapshots/*/conversations/*/mapping/*/message/content/parts/*"
+    }
+  ]
+}
