@@ -11,7 +11,7 @@
   <code>Traceable</code> · <code>Auditable</code> · <code>Local-first</code> ·
   <code>Python 3.12</code> · <code>Windows</code> · <code>Apache-2.0</code>
 </p>
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22093153.svg)](https://doi.org/10.5281/zenodo.22093153)
 **百工**是一套面向本地 AI 数据与执行治理的 Data–Action–Data 演示系统。它从人工构造的
 JSON 样例出发，依次完成数据发现、接纳与来源登记、结构治理、SQLite 身份锚定、DuckDB
 分析物化、BGE-M3 向量生成、Chroma 写入和结果回流准备。
