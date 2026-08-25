@@ -65,7 +65,7 @@ Next Data cycle or upper-layer agent
 - **Version verification:** the main orchestrator pins child-script versions, while the release manifest records SHA-256 values for scripts, templates, and sample data.
 - **Governed actions:** database writes, real-model execution, and optional Neo4j writes require explicit confirmation; dry-run exposes configuration and schema failures before execution.
 - **Diagnosable failure:** structured JSON errors prevent partial failure from being reported as complete success and prevent silent model or database substitution.
-- **Rollback readiness:** test writes are contained under `temp/`; `v0005` remains a code rollback entry while `v0006` is the current validated entry.
+- **Rollback readiness:** test writes are contained under `temp/`; `v0006` remains a code rollback entry while `v0009` is the current candidate entry.
 
 “Rollback” does not claim automatic reversal of every external database transaction. It means that
 code versions, test data, execution evidence, and write boundaries remain clear enough for a failed
@@ -73,18 +73,20 @@ run to be located, isolated, replayed, or safely withdrawn by an operator.
 
 ## Current status
 
-- Main entry point: `scripts/orchestration/action/data_action_chain_pipeline_v0006.py`
-- Rollback entry point: `scripts/orchestration/action/data_action_chain_pipeline_v0005.py`
+- Main entry point: `scripts/orchestration/action/data_action_chain_pipeline_v0009.py`
+- Rollback entry point: `scripts/orchestration/action/data_action_chain_pipeline_v0006.py`
 - Validated platform: Windows with Python 3.12.7
 - Validated GPU: NVIDIA GeForce RTX 4060 Laptop GPU
 - Validated PyTorch build: `2.9.0+cu126`
 - Validated main path: SQLite, DuckDB, BGE-M3, and Chroma
+- Added in v0009: a complete ingress contract, format detection and adapters, a structural-parse gate, and source-message timestamp supplementation
 - Neo4j: code and templates are retained as an optional, unvalidated branch
 
 The latest isolated acceptance run covered preflight dry-run, a full mock smoke test, and a small
 real BGE-M3 run. The real-model run generated six 1024-dimensional vectors and ended with
 `ready_for_data_discovery`. The sanitized acceptance summary is available at
-[`docs/acceptance/acceptance_report_v0001.json`](docs/acceptance/acceptance_report_v0001.json).
+[`docs/acceptance/acceptance_report_v0001.json`](docs/acceptance/acceptance_report_v0001.json). The v0009 synthetic timestamp, ingress adapter, and mock full-chain acceptance is recorded in
+[`docs/acceptance/acceptance_report_v0002.json`](docs/acceptance/acceptance_report_v0002.json).
 
 ## Quick installation
 
@@ -174,6 +176,8 @@ overwritten:
 .\run_demo_test.ps1 -Mode Mock
 ```
 
+Deep extraction paths can still exceed the traditional Windows path limit. The launcher estimates a long v0009 evidence path before writing and rejects unsafe runs with a clear message; move the project to a shorter directory and keep the batch name short if this guard triggers.
+
 To inspect the complete command without creating files:
 
 ```powershell
@@ -183,7 +187,7 @@ To inspect the complete command without creating files:
 List every orchestration option with:
 
 ```powershell
-python .\scripts\orchestration\action\data_action_chain_pipeline_v0006.py --help
+python .\scripts\orchestration\action\data_action_chain_pipeline_v0009.py --help
 ```
 
 `--dry-run` parses active configurations and checks paths and the Action business schema without
@@ -248,7 +252,7 @@ Baigong/
 - `FILE_LIST.md` is the human-readable release inventory.
 - The logo retains its original C2PA content credential, including signed generation-tool provenance. It is not executable code and does not identify the project owner.
 - The sanitized acceptance summary excludes original run manifests containing machine-local absolute paths and explicitly records that limitation.
-- `v0006` is the current entry point; `v0005` remains available for file-level rollback.
+- `v0009` is the current candidate entry point; `v0006` remains available for file-level rollback.
 - Each real run should also retain the top-level completion manifest, child manifests, Action lineage, and Action Return manifest; release integrity and run-evidence integrity are checked separately.
 - Runtime output, active configuration, and virtual environments are excluded by `.gitignore`.
 
