@@ -1,15 +1,16 @@
 {
   "schema_version": "data_action_demo_dependency_manifest_v0003",
-  "generated_at": "2026-08-25T07:27:25.998149Z",
+  "generated_at": "2026-08-25T08:15:49.070810Z",
+  "release_version": "v0.2.0",
   "entry_point": "scripts/orchestration/action/data_action_chain_pipeline_v0009.py",
   "rollback_entry": "scripts/orchestration/action/data_action_chain_pipeline_v0006.py",
   "basis": [
-    "complete Git candidate inventory",
+    "complete Git release inventory",
     "SHA-256 of Git index blobs before checkout line-ending transformations"
   ],
-  "scope": "Baigong Data-Action public demo candidate; Neo4j not acceptance-tested",
+  "scope": "Baigong v0.2.0 Data-Action public demo release; Neo4j not acceptance-tested",
   "counts": {
-    "files": 165,
+    "files": 166,
     "scripts": 112,
     "config_examples": 29,
     "contract_configs": 4,
@@ -627,12 +628,32 @@
       "sha256": "1f86bbb8c9f974e1339eb3449de2b93fda576372b2c5d51eb897c778ee04e03a"
     },
     {
-      "path": "actioning/README.md",
-      "sha256": "cd56d60f386abda8907aaed2b729604ff901cb02d2d8650e0215b170bbee0614"
-    },
-    {
       "path": "AGENTS.md",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "ccd2c6bf98abe27fe2f7b1baa10311439b3cf4eef218425bfe2cbf0f4b668fbd"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "ea6a63635b31135ea2f42df84afa35da8d19980fcdc8376d7c909642d9613d30"
+    },
+    {
+      "path": "README.md",
+      "sha256": "79f6cc00735db9e1728a4c0446e5cefe4fa272cfa900f55145d216a663cf34b1"
+    },
+    {
+      "path": "README_EN.md",
+      "sha256": "73077533d724701fb0409ba61b35f0d2d6bf78ed1f1ef227e7dddf1cc825508b"
+    },
+    {
+      "path": "actioning/README.md",
+      "sha256": "cd56d60f386abda8907aaed2b729604ff901cb02d2d8650e0215b170bbee0614"
     },
     {
       "path": "assets/baigong-logo.png",
@@ -793,22 +814,6 @@
     {
       "path": "launch_installer.cmd",
       "sha256": "91d6131793b2d78afc9bff523c8b1150adbb048b746cdccdb600e292c9408027"
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
-    },
-    {
-      "path": "NOTICE",
-      "sha256": "ea6a63635b31135ea2f42df84afa35da8d19980fcdc8376d7c909642d9613d30"
-    },
-    {
-      "path": "README_EN.md",
-      "sha256": "b75f430acb1067a90b0a4dcc91a5972c92e42de7109e67537e5ebc5960d60cde"
-    },
-    {
-      "path": "README.md",
-      "sha256": "3bf7f004b101a3bc738eacfb66342c9e53d5825ef64103c248cfdc15d93a21ce"
     },
     {
       "path": "requirements/README.md",

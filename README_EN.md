@@ -65,7 +65,7 @@ Next Data cycle or upper-layer agent
 - **Version verification:** the main orchestrator pins child-script versions, while the release manifest records SHA-256 values for scripts, templates, and sample data.
 - **Governed actions:** database writes, real-model execution, and optional Neo4j writes require explicit confirmation; dry-run exposes configuration and schema failures before execution.
 - **Diagnosable failure:** structured JSON errors prevent partial failure from being reported as complete success and prevent silent model or database substitution.
-- **Rollback readiness:** test writes are contained under `temp/`; `v0006` remains a code rollback entry while `v0009` is the current candidate entry.
+- **Rollback readiness:** test writes are contained under `temp/`; `v0006` remains a code rollback entry while `v0009` is the current accepted entry.
 
 “Rollback” does not claim automatic reversal of every external database transaction. It means that
 code versions, test data, execution evidence, and write boundaries remain clear enough for a failed
@@ -73,6 +73,7 @@ run to be located, isolated, replayed, or safely withdrawn by an operator.
 
 ## Current status
 
+- Current release: `v0.2.0`
 - Main entry point: `scripts/orchestration/action/data_action_chain_pipeline_v0009.py`
 - Rollback entry point: `scripts/orchestration/action/data_action_chain_pipeline_v0006.py`
 - Validated platform: Windows with Python 3.12.7
@@ -252,7 +253,7 @@ Baigong/
 - `FILE_LIST.md` is the human-readable release inventory.
 - The logo retains its original C2PA content credential, including signed generation-tool provenance. It is not executable code and does not identify the project owner.
 - The sanitized acceptance summary excludes original run manifests containing machine-local absolute paths and explicitly records that limitation.
-- `v0009` is the current candidate entry point; `v0006` remains available for file-level rollback.
+- `v0009` is the current accepted entry point; `v0006` remains available for file-level rollback.
 - Each real run should also retain the top-level completion manifest, child manifests, Action lineage, and Action Return manifest; release integrity and run-evidence integrity are checked separately.
 - Runtime output, active configuration, and virtual environments are excluded by `.gitignore`.
 
