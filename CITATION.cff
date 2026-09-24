@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it using the metadata below."
+message: "If you use this software, please cite this release using the metadata below."
 title: "Baigong"
 type: software
-version: "0.2.0"
-date-released: 2026-08-25
+version: "0.3.0"
+date-released: 2026-09-24
 authors:
   - family-names: "Yang"
     given-names: "Ruixin"
@@ -11,14 +11,12 @@ authors:
 repository-code: "https://github.com/David7583/baigong"
 url: "https://github.com/David7583/baigong"
 license: "Apache-2.0"
-doi: "10.5281/zenodo.22093154"
 abstract: >-
-  Baigong is a local-first, traceable, auditable, and rollback-oriented
-  Data-Action-Data harness for AI agents and AI governance.
+  Baigong converts supported chat exports into local, traceable data for AI
+  retrieval through a Data-Action-Data pipeline with offline BGE-M3 embeddings.
 keywords:
-  - AI agents
-  - AI governance
-  - agent harness
+  - local AI
   - data lineage
   - traceability
-  - local AI
+  - embeddings
+  - chat exports

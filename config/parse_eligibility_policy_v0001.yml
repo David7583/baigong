@@ -1,0 +1,99 @@
+meta:
+  header_type: meta
+  source: ChatGPT Conversation
+  date: "2026-01-29"
+  theme:
+    - parse eligibility
+    - value-level observation
+    - parsing governance
+  tags:
+    - eligibility
+    - parsing
+    - threshold
+    - v0001
+  notes: >
+    Policy configuration for parse eligibility decision.
+    Decisions are based solely on value-level observation outputs.
+    No semantic inference is permitted at this stage.
+  status: active
+
+  updatable: true
+
+  lineage:
+    - profile_string_values_v0001.py
+    - header_system_guide_v0001.md
+
+  managed_by: manual_registry_v0001.py
+  registered_by: manual_registry_v0001.py
+  updated_via: manual_update_only
+
+
+policy:
+  name: parse_eligibility
+  version: v0001
+  description: >
+    Eligibility decision policy for determining whether
+    string-value paths may enter the parsing pipeline.
+    This policy consumes observation facts only.
+
+
+decision_order:
+  - FREEZE
+  - DELAY
+  - ALLOW
+
+
+defaults:
+  decision: ALLOW
+  on_missing_metric: DELAY
+
+
+thresholds:
+  entropy:
+    avg_max_for_parse: 4.8
+
+  unicode:
+    control_ratio_max: 0.01
+    printable_ratio_min: 0.85
+
+  symbols:
+    max_consecutive_symbol_run_max: 12
+
+
+rules:
+
+  - id: freeze_high_entropy
+    description: >
+      Freeze parsing when average entropy exceeds
+      the maximum allowed threshold.
+    when:
+      entropy.avg:
+        gt: ${thresholds.entropy.avg_max_for_parse}
+    decision: FREEZE
+
+  - id: delay_control_char_ratio
+    description: >
+      Delay parsing when control character ratio
+      exceeds safe operational limits.
+    when:
+      unicode.control_ratio:
+        gt: ${thresholds.unicode.control_ratio_max}
+    decision: DELAY
+
+  - id: delay_low_printable_ratio
+    description: >
+      Delay parsing when printable character ratio
+      falls below minimum requirement.
+    when:
+      unicode.printable_ratio:
+        lt: ${thresholds.unicode.printable_ratio_min}
+    decision: DELAY
+
+  - id: delay_symbol_burst
+    description: >
+      Delay parsing when excessive consecutive symbol
+      runs are detected.
+    when:
+      symbols.max_consecutive_symbol_run:
+        gt: ${thresholds.symbols.max_consecutive_symbol_run_max}
+    decision: DELAY

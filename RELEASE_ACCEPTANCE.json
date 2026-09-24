@@ -1,0 +1,33 @@
+{
+  "release": "v0.3.0",
+  "date": "2026-09-24",
+  "entry": "scripts/orchestration/action/data_action_chain_pipeline_v0018.py",
+  "platform": "Windows x64",
+  "python": "3.12.7",
+  "device": "CPU",
+  "model": "BAAI/bge-m3",
+  "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "model_dimensions": 1024,
+  "mock_checks_passed": 16,
+  "real_checks_passed": 17,
+  "clean_install_pip_check": "passed",
+  "isolated_runtime_imports": 96,
+  "semantic_top1_checks": 3,
+  "pipeline_vectors": 20,
+  "repeated_processing": "unchanged vector fingerprint and fact counts",
+  "tested_failure_paths": [
+    "missing execution confirmation",
+    "malformed JSON rollback",
+    "injected failure after anchor persistence rollback",
+    "missing local model rejection"
+  ],
+  "source_input": "synthetic only",
+  "test_basis": "Runtime scripts/configuration/dependencies/test tools byte-identical to accepted rc04; subsequent changes limited to release documentation, image and metadata.",
+  "not_in_scope": [
+    "GPU",
+    "Neo4j",
+    "HTTP model services",
+    "host AI-controller integration",
+    "independent end-to-end run for UUID linear-message input"
+  ]
+}
