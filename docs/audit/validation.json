@@ -1,0 +1,115 @@
+{
+  "platform": "Windows x64",
+  "node": "24.19.0",
+  "python": "3.12.7",
+  "dependency_mode": "Reuse exact-version dependencies from previously isolated release test; fresh dependency installation is left to GitHub CI. No user data reused.",
+  "tests": [
+    {
+      "name": "frontend-metadata",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "reject-invalid-cff",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true
+    },
+    {
+      "name": "reject-source-tamper",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true
+    },
+    {
+      "name": "reject-unlisted-file",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true
+    },
+    {
+      "name": "backend-metadata",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "create-test-venv",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "initialize-empty-backend",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "backend-integration",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "frontend-desktop",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true
+    }
+  ],
+  "status": "passed",
+  "ci": {
+    "status": "passed",
+    "verified_runs": {
+      "baigong-workbench-frontend": [
+        {
+          "id": 38921533744,
+          "head_sha": "462c346c91e7af7dec5fabe5a8dae91c07b53ea3",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/David7583/baigong-workbench-frontend/actions/runs/38921533744"
+        },
+        {
+          "id": 38921460546,
+          "head_sha": "462c346c91e7af7dec5fabe5a8dae91c07b53ea3",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/David7583/baigong-workbench-frontend/actions/runs/38921460546"
+        }
+      ],
+      "baigong": [
+        {
+          "id": 38921539383,
+          "head_sha": "42c3b210d0c0b2fbc2acc92941ac704e8aa106e4",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/David7583/baigong/actions/runs/38921539383"
+        },
+        {
+          "id": 38921490099,
+          "head_sha": "42c3b210d0c0b2fbc2acc92941ac704e8aa106e4",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/David7583/baigong/actions/runs/38921490099"
+        }
+      ]
+    },
+    "note": "These are the audited implementation commits. This follow-up updates documentation only; later head checks are visible on the Draft PR. Fresh hosted Windows dependency installation and integration tests passed."
+  },
+  "video_technical_acceptance": {
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "duration_seconds": 60,
+    "av_duration_delta_seconds": 0,
+    "full_decode_errors": 0,
+    "sha256": "e89aa69a46be8800290be6cdd7c53850631f30b30d672bcbc4874b3ec87f8a97",
+    "rights_clearance": "Voice-output service rights not yet verified; no formal video release authorized."
+  }
+}

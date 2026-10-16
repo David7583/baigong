@@ -1,0 +1,39 @@
+{
+  "frontend": {
+    "base_commit": "00baf4b4358aac5f3027fba21083be1af31d3249",
+    "commits_scanned": 4,
+    "unique_blobs_scanned": 232,
+    "bytes_scanned": 6628787,
+    "credential_pattern_findings": [],
+    "binary_paths": [
+      "docs/images/01-empty-workbench.png",
+      "docs/images/02-chat.png",
+      "docs/images/03-model-settings.png",
+      "docs/images/baigong-logo.png",
+      "docs/product-video/evidence/contact_sheet.jpg",
+      "docs/product-video/poster.jpg"
+    ],
+    "reviewed_path_matches": 0,
+    "path_review_result": "Backend matches are tracked runtime source modules, not user runtime data; no database/credential/archive files found in scanned reachable blobs."
+  },
+  "backend": {
+    "base_commit": "6bb19fb4a85df6c77eec1469e655b313df7d0298",
+    "commits_scanned": 15,
+    "unique_blobs_scanned": 560,
+    "bytes_scanned": 10288988,
+    "credential_pattern_findings": [],
+    "binary_paths": [
+      "assets/baigong-logo.png"
+    ],
+    "reviewed_path_matches": 69,
+    "path_review_result": "Backend matches are tracked runtime source modules, not user runtime data; no database/credential/archive files found in scanned reachable blobs."
+  },
+  "scope": "All reachable objects from full clone remote branches and tags at audit baseline, including frontend video feature branch. Includes removed/older reachable contents, not unreachable objects, server logs, deleted remote refs or unexposed LFS payloads. Pattern-based scan is not a proof of absence.",
+  "patterns": [
+    "PEM private-key headers",
+    "GitHub token formats",
+    "OpenAI token formats",
+    "AWS access IDs",
+    "quoted secret/password assignments with obvious placeholders excluded"
+  ]
+}
