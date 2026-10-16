@@ -1,0 +1,80 @@
+{
+  "baigong-workbench-frontend": {
+    "visibility": "public",
+    "has_issues": true,
+    "has_discussions": false,
+    "default_branch": "main",
+    "security_and_analysis": {
+      "secret_scanning": {
+        "status": "disabled"
+      },
+      "secret_scanning_push_protection": {
+        "status": "disabled"
+      },
+      "dependabot_security_updates": {
+        "status": "disabled"
+      },
+      "secret_scanning_non_provider_patterns": {
+        "status": "disabled"
+      },
+      "secret_scanning_validity_checks": {
+        "status": "disabled"
+      }
+    },
+    "rulesets": [],
+    "hooks": [],
+    "private_vulnerability_reporting": {
+      "before": {
+        "enabled": false
+      },
+      "change": {
+        "http_status": 204
+      },
+      "after": {
+        "enabled": true
+      }
+    }
+  },
+  "baigong": {
+    "visibility": "public",
+    "has_issues": true,
+    "has_discussions": false,
+    "default_branch": "main",
+    "security_and_analysis": {
+      "secret_scanning": {
+        "status": "enabled"
+      },
+      "secret_scanning_push_protection": {
+        "status": "enabled"
+      },
+      "dependabot_security_updates": {
+        "status": "disabled"
+      },
+      "secret_scanning_non_provider_patterns": {
+        "status": "disabled"
+      },
+      "secret_scanning_validity_checks": {
+        "status": "disabled"
+      }
+    },
+    "rulesets": [],
+    "hooks": [
+      {
+        "name": "web",
+        "active": true,
+        "destination_host": "zenodo.org"
+      }
+    ],
+    "private_vulnerability_reporting": {
+      "before": {
+        "enabled": false
+      },
+      "change": {
+        "http_status": 204
+      },
+      "after": {
+        "enabled": true
+      }
+    }
+  }
+}

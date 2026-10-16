@@ -1,0 +1,13 @@
+name: Feature request / 功能建议
+description: Explain the task and observable acceptance criteria.
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Goal and current limitation / 目标与现有限制
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and required permissions / 验收与权限

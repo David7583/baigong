@@ -1,0 +1,47 @@
+{
+  "frontend": {
+    "entries": 203,
+    "mismatches": 0
+  },
+  "backend": {
+    "entries": 365,
+    "matches": 183,
+    "crlf_only_mismatches": 149,
+    "other_stale_entries": [
+      "AGENTS.md",
+      "scripts/analyze_json_structure_v0003.py",
+      "frontend/local_ai_workbench/adapters/workbench_discovery_v0001.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0003.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0008.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0009.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0010.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0011.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0012.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0013.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0014.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0015.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_server_v0016.cjs",
+      "frontend/local_ai_workbench/runtime/workbench_studio_v0007.cjs",
+      "scripts/action/adapters/select_semantic_text_units_v0002.py",
+      "scripts/action/anchor/ingest_attribute_units_v0003.py",
+      "scripts/action/anchor/ingest_concept_units_v0002.py",
+      "scripts/action/derivation/sync_sql_to_duckdb_v0006.py",
+      "scripts/action/infrastructures/concurrent_store_service_v0001.py",
+      "scripts/action/infrastructures/concurrent_store_service_v0002.py",
+      "scripts/action/infrastructures/content_asset_repository_v0001.py",
+      "scripts/action/infrastructures/content_asset_repository_v0002.py",
+      "scripts/action/pipelines/aggregate_graph_statistics_v0002.py",
+      "scripts/action/pipelines/analyze_graph_statistics_v0002.py",
+      "scripts/action/pipelines/analyze_structural_statistics_v0003.py",
+      "scripts/action/pipelines/build_unit_hierarchy_graph_v0002.py",
+      "scripts/action/pipelines/normalize_text_units_v0002.py",
+      "scripts/action/vector/embedding_contract_validator_v0002.py",
+      "scripts/action/development/scripts/independent_action_chat/action_chat_provenance_v0002.py",
+      "scripts/action/development/scripts/independent_action_chat/action_chat_providers_v0006.py",
+      "scripts/action/tools/retrieval/retrieval_executor_v0002.py",
+      "scripts/action/tools/retrieval/retrieval_strategy_v0004.py",
+      "scripts/orchestration/action/data_action_chain_pipeline_v0021.py"
+    ]
+  },
+  "remedy": "Regenerate from Git index; preserve unchanged business source. Do not claim all original mismatches are line endings."
+}

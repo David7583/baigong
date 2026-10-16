@@ -6,7 +6,7 @@
 
 ## 配套前端
 
-[baigong-workbench-frontend](https://github.com/David7583/baigong-workbench-frontend) 是独立私有仓库，须获得访问权限。两者应使用同一发布版本 `0.7.0-chat.1`。下载源码 ZIP 后也能按下列方式初始化；初始化会为 ZIP 副本建立规范审计所需的本地 Git 元数据。
+[baigong-workbench-frontend](https://github.com/David7583/baigong-workbench-frontend) 是独立公开源码仓库。两者应使用同一发布版本 `0.7.0-chat.1`。下载源码 ZIP 后也能按下列方式初始化；初始化会为 ZIP 副本建立规范审计所需的本地 Git 元数据。
 
 ## 安装
 
@@ -53,3 +53,9 @@ npm test
 ```
 
 测试会创建本地人工运行状态与审计，不应在真实业务目录执行。详见 [验收说明](docs/RELEASE_VALIDATION.md)。沿用百工 Apache-2.0 许可及 NOTICE。没有附带模型权重、真实业务数据、凭证或已安装依赖。
+
+## 功能成熟度与开源协作
+
+当前 Windows 空工作台基线已验收启动、聊天界面、许可关闭、保存/重启持久化和加载/卸载。编排及专业资源接口存在，但在线模型、第三方工具、通用 AI 编排分析、向量模型和跨平台运行不等于已全面验收。未来独立安装包和自动发布不是当前交付功能。配置远程模型/工具可能发送数据；不承诺所有数据绝不离开本机。
+
+开发、测试和 PR 流程见 [CONTRIBUTING.md](CONTRIBUTING.md)；另见[安全报告](SECURITY.md)、[第三方清单](THIRD_PARTY.md)、[仓库审计](docs/REPOSITORY_AUDIT.md)及 [Zenodo 准备](docs/ZENODO.md)。CITATION.cff 仅描述工作台后端，旧数据流水线 DOI 不应作为它的版本 DOI。

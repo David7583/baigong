@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, cite the matching source version using this metadata."
+type: software
+title: "Baigong Local AI Workbench — Backend"
+authors:
+  - family-names: "Yang"
+    given-names: "Ruixin"
+    alias: "David7583"
+version: "0.7.0-chat.1"
+repository-code: "https://github.com/David7583/baigong"
+url: "https://github.com/David7583/baigong/tree/workbench-backend"
+license: "Apache-2.0"
+abstract: >-
+  The backend source for a local desktop AI workbench with chat,
+  modular capability management, workflow orchestration and permission controls.
+  External models and specialized tools require separate configuration.
+keywords:
+  - local AI
+  - workflow orchestration
+  - permission controls
+  - desktop workbench

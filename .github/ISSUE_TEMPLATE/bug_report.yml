@@ -1,0 +1,19 @@
+name: Bug report / 问题反馈
+description: Report a reproducible issue using synthetic data.
+body:
+  - type: markdown
+    attributes:
+      value: "Do not disclose vulnerabilities, credentials, real family records or personal chats here. See SECURITY.md for private reporting."
+  - type: textarea
+    id: environment
+    attributes:
+      label: Version, commit and environment / 版本与环境
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction, expected and actual result / 复现与结果
+      description: Use a minimal synthetic example; redact logs and screenshots.
+    validations:
+      required: true

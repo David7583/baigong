@@ -16,3 +16,26 @@ logs/
 *.local.yml
 config/action/ai/api_keys_v0002.yml
 config/action/ai/ollama_config_v0001.yml
+
+# Local verification, credentials, user data and large delivery artifacts
+.audit-cache/
+.test-output/
+.build/
+governance/
+product_videos/
+*.pem
+*.key
+*.pfx
+*.p12
+*.mp4
+*.mp3
+*.wav
+*.zip
+*.7z
+*.tar.gz
+*.ttf
+*.ttc
+*.woff
+*.woff2
+*.exe
+*.msi

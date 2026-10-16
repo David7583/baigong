@@ -8,5 +8,6 @@
   "scripts": {
     "start": "node frontend/local_ai_workbench/runtime/workbench_server_v0017.cjs",
     "test": "node --test tests/release_contract_test_v0001.cjs"
-  }
+  },
+  "license": "Apache-2.0"
 }
