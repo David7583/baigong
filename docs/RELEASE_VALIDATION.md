@@ -27,3 +27,7 @@ Python 基础依赖在新虚拟环境中安装，npm 包按 lockfile 安装。El
 实际模型服务、用户密钥、外部软件、向量库、CAD 依赖、macOS/Linux 桌面均不在本次验收范围。模型示例不是账户可用性承诺。配套前端现已公开；初次发布阶段的私有访问限制已不适用。
 
 正式候选由本地发布清单逐文件 SHA-256 固定，发布只取受检集合；保留失败与修复记录。回退可选择前一提交；源码回退不删除本机运行数据或替代数据恢复。
+
+## 2026-10-16 开源审计补充验收
+
+GitHub Actions 全新 Windows runner 已通过依赖安装和集成测试：[本仓库 CI](https://github.com/David7583/baigong/actions/runs/38921539383)。前端 CI 包含 npm ci 和真实 Electron 聊天启动；后端 CI 包含新虚拟环境安装、API、权限默认值与保存/重启。它补充了上述本机下载受限的历史记录，不代表另一台实体电脑或 macOS/Linux 已验收。详细结果见 [仓库审计](REPOSITORY_AUDIT.md)与 [validation.json](audit/validation.json)。

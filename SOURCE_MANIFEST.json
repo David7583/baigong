@@ -96,11 +96,11 @@
     },
     {
       "path": "docs/RELEASE_VALIDATION.md",
-      "sha256": "255c330742937832abf24ada983a6b75fd7219e7b2d09bce4153b1bbde9c72c4"
+      "sha256": "28dbf488f923fe06c670644d640666555c111d04d2f3e5972b8490af3bd5104a"
     },
     {
       "path": "docs/REPOSITORY_AUDIT.md",
-      "sha256": "c9587f4df560f0d160f26675657b43be361669a00a8af5c2d21fc56e5f441927"
+      "sha256": "53cf4fdb7a5503805c6fbcb93e6a4eb9029d0c1028b480ecc91b90cb91d3537a"
     },
     {
       "path": "docs/ZENODO.md",
@@ -124,7 +124,7 @@
     },
     {
       "path": "docs/audit/validation.json",
-      "sha256": "9608bc874f4bb9e1186817b4d188540f8bd868542b2a5bdadfdca76e8934593c"
+      "sha256": "0f2557625771291549792d5b0d06dc9bdb0360972a288ec75de9e24d4dd8c9cb"
     },
     {
       "path": "docs/cross_language_script_format_standard.md",

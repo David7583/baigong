@@ -61,8 +61,46 @@
   ],
   "status": "passed",
   "ci": {
-    "status": "pending",
-    "note": "Workflow execution will be checked after the independent branch is pushed."
+    "status": "passed",
+    "verified_runs": {
+      "baigong-workbench-frontend": [
+        {
+          "id": 38921533744,
+          "head_sha": "462c346c91e7af7dec5fabe5a8dae91c07b53ea3",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/David7583/baigong-workbench-frontend/actions/runs/38921533744"
+        },
+        {
+          "id": 38921460546,
+          "head_sha": "462c346c91e7af7dec5fabe5a8dae91c07b53ea3",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/David7583/baigong-workbench-frontend/actions/runs/38921460546"
+        }
+      ],
+      "baigong": [
+        {
+          "id": 38921539383,
+          "head_sha": "42c3b210d0c0b2fbc2acc92941ac704e8aa106e4",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/David7583/baigong/actions/runs/38921539383"
+        },
+        {
+          "id": 38921490099,
+          "head_sha": "42c3b210d0c0b2fbc2acc92941ac704e8aa106e4",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/David7583/baigong/actions/runs/38921490099"
+        }
+      ]
+    },
+    "note": "These are the audited implementation commits. This follow-up updates documentation only; later head checks are visible on the Draft PR. Fresh hosted Windows dependency installation and integration tests passed."
   },
   "video_technical_acceptance": {
     "width": 1920,

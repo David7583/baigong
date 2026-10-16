@@ -49,7 +49,7 @@ Apache-2.0 文本完整、保持不变；基础开源文档、引用元数据、
 
 ## 本次验证与验收记录
 
-本地 9 项检查全部通过（含 3 个预期失败的防回归检查）；API 与真实 Electron 聊天回归各 1 项通过。远程 CI 在推送后核验。本地和远程结果记录在 [validation.json](audit/validation.json)，测试命令如下：
+本地 9 项检查全部通过（含 3 个预期失败的防回归检查）；API 与真实 Electron 聊天回归各 1 项通过。GitHub Actions 的全新 Windows 环境依赖安装和集成测试均已通过：[前端 CI](https://github.com/David7583/baigong-workbench-frontend/actions/runs/38921533744)、[后端 CI](https://github.com/David7583/baigong/actions/runs/38921539383)。本地和远程结果记录在 [validation.json](audit/validation.json)，测试命令如下：
 
 ```powershell
 python tests/repository_check_v0001.py --schema <官方CFF-1.2.0-schema.json>
