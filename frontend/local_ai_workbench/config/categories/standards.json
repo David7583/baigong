@@ -1,0 +1,11 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "standards",
+  "name": "规范中心",
+  "kind": "collection",
+  "module": "standards",
+  "order": 11.5,
+  "scan": false,
+  "add_label": "新建规范",
+  "description": "系统总则、工程规范、流程、提示词与可执行治理审计"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "baigong-workbench-backend",
+  "version": "0.7.0-chat.1",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node frontend/local_ai_workbench/runtime/workbench_server_v0017.cjs",
+    "test": "node --test tests/release_contract_test_v0001.cjs"
+  }
+}

@@ -1,0 +1,1 @@
+{"schema_version":"workbench.category.v1","id":"projects","name":"项目","module":"capability_hub","kind":"projects","description":"保存项目上下文、资料位置与能力引用","order":9,"scan":false,"add":true,"add_label":"新建项目"}

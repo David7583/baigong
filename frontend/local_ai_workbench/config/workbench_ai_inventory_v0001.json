@@ -1,0 +1,4 @@
+{
+  "schema_version": "workbench.ai-inventory-config.v1",
+  "controller_config": "config/action/ai/action_ai_controller_config_v0003.yml"
+}

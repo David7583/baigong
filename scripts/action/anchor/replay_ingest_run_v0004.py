@@ -66,7 +66,7 @@ import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 
 SCRIPT_NAME = "replay_ingest_run_v0004.py"
@@ -149,29 +149,15 @@ def _norm_json(obj: Dict[str, Any]) -> bytes:
     return json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode(DEFAULT_ENCODING)
 
 
-def _parse_command(value: str) -> List[str]:
-    try:
-        parsed = json.loads(value)
-    except json.JSONDecodeError as exc:
-        raise ValueError("--cmd must be a JSON array of argument strings") from exc
-    if (
-        not isinstance(parsed, list)
-        or not parsed
-        or any(not isinstance(item, str) or not item for item in parsed)
-    ):
-        raise ValueError("--cmd must be a non-empty JSON array of non-empty strings")
-    return parsed
-
-
-def _run_cmd(cmd: Sequence[str], cwd: Path, timeout_sec: int) -> Dict[str, Any]:
-    # 使用 argv 且禁用 shell，避免命令字符串被 shell 再解释
+def _run_cmd(cmd: str, cwd: Path, timeout_sec: int) -> Dict[str, Any]:
+    # 使用 shell 执行以兼容 PowerShell 传入的整行命令
     # 结果中不返回过长 stdout/stderr，避免报告膨胀
     started = _utc_now_iso()
     try:
         proc = subprocess.run(
-            list(cmd),
+            cmd,
             cwd=str(cwd),
-            shell=False,
+            shell=True,
             capture_output=True,
             text=True,
             timeout=timeout_sec,
@@ -184,7 +170,7 @@ def _run_cmd(cmd: Sequence[str], cwd: Path, timeout_sec: int) -> Dict[str, Any]:
             "returncode": proc.returncode,
             "started_at": started,
             "finished_at": finished,
-            "cmd": list(cmd),
+            "cmd": cmd,
             "stdout_preview": out[:4000],
             "stderr_preview": err[:4000],
         }
@@ -195,7 +181,7 @@ def _run_cmd(cmd: Sequence[str], cwd: Path, timeout_sec: int) -> Dict[str, Any]:
             "returncode": None,
             "started_at": started,
             "finished_at": finished,
-            "cmd": list(cmd),
+            "cmd": cmd,
             "stdout_preview": (e.stdout or "")[:4000] if hasattr(e, "stdout") else "",
             "stderr_preview": (e.stderr or "")[:4000] if hasattr(e, "stderr") else "",
             "error": f"timeout after {timeout_sec}s",
@@ -207,7 +193,7 @@ def _run_cmd(cmd: Sequence[str], cwd: Path, timeout_sec: int) -> Dict[str, Any]:
             "returncode": None,
             "started_at": started,
             "finished_at": finished,
-            "cmd": list(cmd),
+            "cmd": cmd,
             "stdout_preview": "",
             "stderr_preview": "",
             "error": str(e),
@@ -360,7 +346,7 @@ def replay_and_compare(
     replay_instance: Path,
     replay_attribute: Path,
     workdir: Path,
-    cmds: List[List[str]],
+    cmds: List[str],
     timeout_sec: int,
     sample_limit: int,
 ) -> Dict[str, Any]:
@@ -373,6 +359,8 @@ def replay_and_compare(
 
     # 1. 运行重放命令
     for cmd in cmds:
+        if not cmd.strip():
+            continue
         res = _run_cmd(cmd, cwd=workdir, timeout_sec=timeout_sec)
         cmd_results.append(res)
         if res.get("status") != "ok":
@@ -547,12 +535,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "--cmd",
         action="append",
         default=[],
-        help='Replay argv as JSON, for example ["python","script.py"]; repeat to form a sequence',
-    )
-    p.add_argument(
-        "--confirm-external-command",
-        action="store_true",
-        help="Explicitly authorize execution of the argv supplied through --cmd",
+        help="Replay command to execute. Provide multiple times to form a sequence",
     )
 
     p.add_argument("--timeout-sec", type=int, default=1800, help="Timeout seconds per command")
@@ -585,18 +568,6 @@ def main() -> int:
     _ensure_dir(report_path.parent)
     _ensure_dir(workdir)
 
-    if args.cmd and not args.confirm_external_command:
-        print(_safe_json_dumps({
-            "status": "error",
-            "error": "--cmd requires --confirm-external-command",
-        }))
-        return 2
-    try:
-        commands = [_parse_command(value) for value in (args.cmd or [])]
-    except ValueError as exc:
-        print(_safe_json_dumps({"status": "error", "error": str(exc)}))
-        return 2
-
     report = replay_and_compare(
         base_concept=base_concept,
         base_instance=base_instance,
@@ -605,7 +576,7 @@ def main() -> int:
         replay_instance=replay_instance,
         replay_attribute=replay_attribute,
         workdir=workdir,
-        cmds=commands,
+        cmds=list(args.cmd or []),
         timeout_sec=int(args.timeout_sec),
         sample_limit=int(args.sample_limit),
     )

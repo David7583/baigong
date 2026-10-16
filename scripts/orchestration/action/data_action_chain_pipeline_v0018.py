@@ -404,7 +404,7 @@ def argument_value(arguments: Sequence[str], option: str) -> str:
 
 def database_vector_counts(path: Path) -> Dict[str, int]:
     require_file(path, label="Action data SQLite database")
-    connection = sqlite3.connect(Path(str(path).removeprefix('\\\\?\\')).as_uri() + "?mode=ro", uri=True)
+    connection = sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True)
     try:
         counts: Dict[str, int] = {}
         for target, table in (("concept", "concept_units"), ("instance", "instance_units")):
@@ -577,7 +577,7 @@ class LocalStoreTransactionBarrier:
     @staticmethod
     def _snapshot_sqlite(source: Path, destination: Path) -> None:
         destination.parent.mkdir(parents=True, exist_ok=True)
-        source_connection = sqlite3.connect(Path(str(source).removeprefix('\\\\?\\')).as_uri() + "?mode=ro", uri=True)
+        source_connection = sqlite3.connect(f"file:{source.as_posix()}?mode=ro", uri=True)
         destination_connection = sqlite3.connect(destination)
         try:
             source_connection.backup(destination_connection)

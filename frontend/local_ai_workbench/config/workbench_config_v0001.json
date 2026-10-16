@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench.config.v1",
+  "port": 0,
+  "legacy": false,
+  "health_timeout_ms": 1800,
+  "command_timeout_ms": 15000,
+  "refresh_ms": 30000,
+  "node_budget": 600,
+  "edge_budget": 300,
+  "initial_resources": [],
+  "empty_start": true
+}

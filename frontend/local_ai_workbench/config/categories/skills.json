@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "skills",
+  "name": "Skill",
+  "module": "skills",
+  "kind": "skills",
+  "description": "统一保管，按需交给 Agent",
+  "order": 4,
+  "scan": true,
+  "add": true,
+  "add_label": "添加 Skill"
+}

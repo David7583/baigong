@@ -1,0 +1,14 @@
+{
+  "schema_version": "workbench.adapter-sources.v1",
+  "sources": [
+    {"id":"ingress","name":"数据入站适配","path":"scripts/adapters"},
+    {"id":"action","name":"Action 数据适配","path":"scripts/action/adapters"},
+    {"id":"workbench","name":"工作台接入适配","path":"frontend/local_ai_workbench/adapters"}
+  ],
+  "extensions":[".py",".pyw",".js",".mjs",".cjs"],
+  "exclude_directories":["archive","history","__pycache__","node_modules",".git",".venv"],
+  "max_files":1000,
+  "max_file_bytes":2097152,
+  "max_total_bytes":25165824,
+  "max_depth":12
+}

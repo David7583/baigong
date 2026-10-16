@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "tools",
+  "name": "工具",
+  "module": "tools",
+  "kind": "tools",
+  "description": "独立执行，嵌入工作区",
+  "order": 1,
+  "scan": true,
+  "add": true,
+  "add_label": "添加工具"
+}

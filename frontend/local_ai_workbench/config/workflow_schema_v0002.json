@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:local-ai-workbench:workflow:v2",
+  "title":"Local AI Workbench Workflow v2",
+  "type":"object",
+  "required":["schema_version","id","name","nodes","edges"],
+  "properties":{
+    "schema_version":{"const":"workbench.workflow.v2"},
+    "id":{"type":"string","pattern":"^[a-z][a-z0-9_.-]{2,80}$"},
+    "name":{"type":"string","minLength":1,"maxLength":159},
+    "version":{"type":"integer","minimum":1},
+    "goal":{"type":"string"},
+    "viewport":{"type":"object","required":["x","y","zoom"],"properties":{"x":{"type":"number"},"y":{"type":"number"},"zoom":{"type":"number","minimum":0.15,"maximum":2.5}}},
+    "nodes":{"type":"array","maxItems":500,"items":{"$ref":"#/$defs/node"}},
+    "edges":{"type":"array","maxItems":2000,"items":{"$ref":"#/$defs/edge"}},
+    "interface":{"type":"object","required":["inputs","outputs"],"properties":{"inputs":{"type":"array","items":{"$ref":"#/$defs/interfacePort"}},"outputs":{"type":"array","items":{"$ref":"#/$defs/interfacePort"}}}}
+  },
+  "$defs":{
+    "node":{"type":"object","required":["id","type","x","y","params"],"properties":{"id":{"type":"string","pattern":"^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"},"type":{"type":"string"},"label":{"type":"string"},"note":{"type":"string"},"x":{"type":"number"},"y":{"type":"number"},"params":{"type":"object"},"subgraph":{"$ref":"#"},"definition_ref":{"type":"object","required":["id","version"],"properties":{"id":{"type":"string"},"version":{"type":"integer","minimum":1}}},"capability_ref":{"type":["object","null"]}}},
+    "edge":{"type":"object","required":["id","from","to","fromPort","toPort"],"properties":{"id":{"type":"string"},"from":{"type":"string"},"to":{"type":"string"},"fromPort":{"type":"string"},"toPort":{"type":"string"}}},
+    "interfacePort":{"type":"object","required":["id","type","node","port"],"properties":{"id":{"type":"string"},"name":{"type":"string"},"type":{"type":["string","array"]},"node":{"type":"string"},"port":{"type":"string"},"required":{"type":"boolean"}}}
+  }
+}

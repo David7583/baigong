@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "software",
+  "name": "软件",
+  "module": "software",
+  "kind": "collection",
+  "description": "管理本机软件入口",
+  "order": 5,
+  "scan": true,
+  "add": true,
+  "add_label": "添加软件"
+}

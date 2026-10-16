@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "agents",
+  "name": "AI / Agent",
+  "module": "agents",
+  "kind": "agents",
+  "description": "连接 Agent，分配可用 Skill",
+  "order": 0,
+  "scan": false,
+  "add": true,
+  "add_label": "添加 AI / Agent"
+}

@@ -1,0 +1,167 @@
+{
+  "schema_version": "workbench.database-groups.v1",
+  "groups": [
+    {
+      "id": "action",
+      "name": "action",
+      "description": "行动端登记、执行与派生数据库"
+    },
+    {
+      "id": "understand",
+      "name": "understand",
+      "description": "理解端数据库"
+    },
+    {
+      "id": "data",
+      "name": "data",
+      "description": "来源事实与数据层数据库"
+    },
+    {
+      "id": "business",
+      "name": "业务",
+      "description": "工具、项目及其他业务数据库"
+    }
+  ],
+  "scan_roots": [
+    "sql",
+    "duckdb",
+    "chroma",
+    "data_runtime",
+    "projects",
+    "capabilities/catalog.sqlite3",
+    "governance/catalog.sqlite3",
+    "assets/catalog.sqlite3",
+    "runtime/local_ai_workbench/workbench.sqlite",
+    "frontend/local_ai_workbench/.runtime/workbench.sqlite",
+    "runtime/concurrent_pipeline",
+    "runtime/anchor_vectors_v0001"
+  ],
+  "paths": [
+    {
+      "path": "sql/action.db",
+      "group": "action"
+    },
+    {
+      "path": "sql/action/data.db",
+      "group": "data"
+    },
+    {
+      "path": "data_runtime/action/landscape/data_sandbox/workspace.sqlite3",
+      "group": "business"
+    },
+    {
+      "path": "runtime/anchor_vectors_v0001/ledger.sqlite3",
+      "group": "action"
+    },
+    {
+      "path": "runtime/concurrent_pipeline/queue.sqlite3",
+      "group": "action"
+    },
+    {
+      "path": "runtime/concurrent_pipeline/derived.sqlite3",
+      "group": "action"
+    }
+  ],
+  "types": [
+    {
+      "id": "sqlite",
+      "name": "SQLite",
+      "family": "关系型",
+      "preview_supported": true
+    },
+    {
+      "id": "duckdb",
+      "name": "DuckDB",
+      "family": "分析型",
+      "preview_supported": true
+    },
+    {
+      "id": "chroma",
+      "name": "Chroma",
+      "family": "向量型",
+      "preview_supported": true
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "family": "关系型",
+      "preview_supported": false
+    },
+    {
+      "id": "mysql",
+      "name": "MySQL / MariaDB",
+      "family": "关系型",
+      "preview_supported": false
+    },
+    {
+      "id": "sqlserver",
+      "name": "SQL Server",
+      "family": "关系型",
+      "preview_supported": false
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "family": "关系型",
+      "preview_supported": false
+    },
+    {
+      "id": "neo4j",
+      "name": "Neo4j",
+      "family": "图数据库",
+      "preview_supported": false
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "family": "文档型",
+      "preview_supported": false
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "family": "键值型",
+      "preview_supported": false
+    },
+    {
+      "id": "qdrant",
+      "name": "Qdrant",
+      "family": "向量型",
+      "preview_supported": false
+    },
+    {
+      "id": "milvus",
+      "name": "Milvus",
+      "family": "向量型",
+      "preview_supported": false
+    },
+    {
+      "id": "elasticsearch",
+      "name": "Elasticsearch",
+      "family": "搜索引擎",
+      "preview_supported": false
+    },
+    {
+      "id": "influxdb",
+      "name": "InfluxDB",
+      "family": "时序型",
+      "preview_supported": false
+    },
+    {
+      "id": "other",
+      "name": "其他 / 自定义",
+      "family": "其他",
+      "preview_supported": false
+    }
+  ],
+  "prefixes": [
+    {
+      "path": "runtime/concurrent_pipeline/",
+      "group": "action"
+    },
+    {
+      "path": "data_runtime/action/landscape/",
+      "group": "business"
+    }
+  ]
+}

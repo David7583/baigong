@@ -413,7 +413,7 @@ def validate_database_contracts(
             f"sql_writer configuration database does not match --action-db: {configured_db} != {action_db}"
         )
     try:
-        conn = sqlite3.connect(Path(str(data_db).removeprefix('\\\\?\\')).as_uri() + "?mode=ro", uri=True)
+        conn = sqlite3.connect(f"file:{data_db.as_posix()}?mode=ro", uri=True)
         row = conn.execute(
             "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (data_table,)
         ).fetchone()

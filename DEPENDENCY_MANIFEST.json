@@ -1,7 +1,0 @@
-{
-  "release": "v0.3.0",
-  "curated_file_manifest": "PACKAGE_MANIFEST.json",
-  "runtime_provenance": "provenance/source_manifest.json",
-  "python_lock": "requirements/windows-py312.lock.txt",
-  "historical_files": "Retained in repository; previous demo uses v0.2.0 tag."
-}

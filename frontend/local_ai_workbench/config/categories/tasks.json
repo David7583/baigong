@@ -1,0 +1,11 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "tasks",
+  "name": "任务",
+  "module": "tasks",
+  "kind": "tasks",
+  "description": "自然语言任务与受控执行",
+  "order": 0.5,
+  "scan": false,
+  "add": false
+}

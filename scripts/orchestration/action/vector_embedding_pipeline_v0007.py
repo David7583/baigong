@@ -285,7 +285,7 @@ def validate_dependencies(project_root: Path, python_executable: Path) -> Dict[s
 
 def database_preflight(db_path: Path, target: str) -> Dict[str, Any]:
     require_file(db_path, "Action SQL source database")
-    uri = Path(str(db_path).removeprefix('\\\\?\\')).as_uri() + "?mode=ro"
+    uri = f"file:{db_path.as_posix()}?mode=ro"
     conn = sqlite3.connect(uri, uri=True)
     try:
         tables: Dict[str, List[str]] = {}

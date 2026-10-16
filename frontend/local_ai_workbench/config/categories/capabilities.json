@@ -1,0 +1,1 @@
+{"schema_version":"workbench.category.v1","id":"capabilities","name":"能力仓库","module":"capability_hub","kind":"capabilities","description":"独立保存资产、SQL 目录与按需分配","order":8,"scan":false,"add":true,"add_label":"收集能力"}

@@ -1,0 +1,1 @@
+{"schema_version":"workbench.category.v1","id":"mcp","name":"MCP","module":"capability_hub","kind":"mcp","description":"显式连接、发现与调用 MCP 工具","order":10,"scan":false,"add":true,"add_label":"添加 MCP"}

@@ -127,7 +127,7 @@ def connect(db, *, readonly=True):
     db = Path(db).resolve()
     if not db.is_file():
         raise IdentityError(f"database missing: {db}")
-    conn = sqlite3.connect(Path(str(db).removeprefix('\\\\?\\')).as_uri() + ("?mode=ro" if readonly else "?mode=rw"), uri=True)
+    conn = sqlite3.connect(db.as_uri() + ("?mode=ro" if readonly else "?mode=rw"), uri=True)
     conn.execute("PRAGMA foreign_keys=ON")
     return conn
 

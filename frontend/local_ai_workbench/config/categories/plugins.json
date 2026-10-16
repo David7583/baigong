@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "plugins",
+  "name": "插件",
+  "module": "plugins",
+  "kind": "collection",
+  "description": "管理扩展与接入信息",
+  "order": 3,
+  "scan": true,
+  "add": true,
+  "add_label": "添加插件"
+}

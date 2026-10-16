@@ -1034,11 +1034,6 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--incoming-rel", default=str(DEFAULT_INCOMING_REL), help="Incoming relative dir under data-root")
     p.add_argument("--reports-rel", default=str(DEFAULT_REPORTS_REL), help="Reports relative dir under data-root")
     p.add_argument("--registry-index", default="", help="Optional registry index (json or jsonl), read-only")
-    p.add_argument(
-        "--run-log",
-        default=str(DEFAULT_LOG_DIR / DEFAULT_RUN_LOG_NAME),
-        help="Run log JSONL path; orchestrators should place it inside the isolated run directory",
-    )
 
     p.add_argument("--mode", choices=["external", "internal"], required=True, help="Run mode")
 
@@ -1094,7 +1089,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     registry_index_path = Path(args.registry_index) if args.registry_index.strip() else None
 
     run_id = f"RUN-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}-{uuid.uuid4().hex[:8]}"
-    run_log_path = Path(args.run_log)
+    run_log_path = DEFAULT_LOG_DIR / DEFAULT_RUN_LOG_NAME
 
     run_record: Dict = {
         "run_id": run_id,

@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "databases",
+  "name": "数据库",
+  "module": "databases",
+  "kind": "databases",
+  "description": "挂载与浏览本地资料",
+  "order": 2,
+  "scan": false,
+  "add": true,
+  "add_label": "添加数据库"
+}

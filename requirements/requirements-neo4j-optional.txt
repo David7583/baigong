@@ -1,2 +1,0 @@
-# Optional and not covered by the current Data-Action demo acceptance test.
-neo4j==6.1.0

@@ -263,7 +263,7 @@ def _write_json_atomic(path: Path, payload: Mapping[str, Any]) -> None:
 
 
 def _sqlite_read_only_uri(path: Path) -> str:
-    encoded = quote(path.resolve().as_posix().removeprefix("//?/"), safe="/:")
+    encoded = quote(path.resolve().as_posix(), safe="/:")
     return f"file:{encoded}?mode=ro"
 
 

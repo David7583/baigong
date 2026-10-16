@@ -97,7 +97,8 @@ def iter_files(base_dir: Path) -> Iterator[Path]:
             yield Path(root) / name
 
 
-def write_run_log(entry: dict, log_path: Path) -> None:
+def write_run_log(entry: dict) -> None:
+    log_path = Path(RUN_LOG_PATH)
     log_path.parent.mkdir(parents=True, exist_ok=True)
     with log_path.open("a", encoding="utf-8") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
@@ -171,11 +172,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--no-hash", action="store_true")
     parser.add_argument("--max-hash-bytes", type=int, default=None)
-    parser.add_argument(
-        "--run-log",
-        default=RUN_LOG_PATH,
-        help="Run log JSONL path; orchestrators should place it inside the isolated run directory",
-    )
     return parser.parse_args()
 
 
@@ -223,8 +219,7 @@ if __name__ == "__main__":
                     "output_dir": str(output_dir),
                 },
                 "status": status,
-            },
-            Path(args.run_log),
+            }
         )
 
     print(f"[OK] Inventory snapshot created: {output_file}")

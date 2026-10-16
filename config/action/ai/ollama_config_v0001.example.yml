@@ -1,0 +1,69 @@
+# Ollama 本地服务独立配置 v0001
+# 正式文件用于保存配置；example 是可复制的填写示例，二者都不需要 API Key。
+# 这是待接入的配置契约：现有调用器尚未读取本文件。
+# enabled、超时和 policies 等字段需要调用器实际读取并执行才会生效。
+# connection.base_url 是服务根地址；endpoints 已含 /api，拼接时不得重复添加。
+# 本文件仅配置本地已安装模型；云端 Ollama 的认证与调用不在本配置范围内。
+# 本地地址本身不能保证模型离线运行，接入时须落实禁止远程模型和自动拉取的策略。
+# GET: version/list_models/running_models；POST: show_model/chat/embed。
+# selected_models.embedding 暂为空：本机未确认安装专用向量模型。
+# architecture_context_tokens 是模型元数据，不代表当前运行时 num_ctx。
+# options 留空，沿用服务端参数；stream=false 适合一次性读取完整响应。
+# inspection_snapshot/model_inventory 是检查时快照，后续更新模型后需要刷新。
+# 模型存储目录由 Ollama 管理，本文件不写死本机盘符或用户名。
+
+schema_version: '1.0'
+kind: example
+provider: ollama
+enabled: false
+connection:
+  base_url: http://127.0.0.1:11434
+  protocol: ollama_native
+  authentication:
+    mode: none
+  connect_timeout_seconds: 5
+  read_timeout_seconds: 180
+  max_retries: 0
+endpoints:
+  version: /api/version
+  list_models: /api/tags
+  running_models: /api/ps
+  show_model: /api/show
+  chat: /api/chat
+  embed: /api/embed
+selected_models:
+  chat: qwen3:8b
+  embedding: null
+request_defaults:
+  stream: false
+  keep_alive: 5m
+  options: {}
+policies:
+  require_installed_model: true
+  allow_remote_models: false
+  auto_pull: false
+  auto_start_server: false
+  fallback_to_cloud: false
+logging:
+  log_request_bodies: false
+  log_response_bodies: false
+model_inventory:
+- model_id: qwen3:8b
+  size_bytes: 5225388164
+  digest: 500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41
+  parameter_size: 8.2B
+  quantization: Q4_K_M
+  capabilities:
+  - completion
+  - tools
+  - thinking
+  architecture_context_tokens: 40960
+inspection_snapshot:
+  recorded_at: '2026-09-22T00:38:34.998880+00:00'
+  server_version: 0.34.0
+  loaded_models: []
+official_documentation:
+  authentication: https://docs.ollama.com/api/authentication
+  introduction: https://docs.ollama.com/api/introduction
+  chat: https://docs.ollama.com/api/chat
+  embedding: https://docs.ollama.com/api/embed

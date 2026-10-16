@@ -1,0 +1,52 @@
+schema_version: 1
+runtime:
+  default_answer_provider: openai
+  default_answer_model: gpt-4.1-mini
+  request_timeout_ms: 60000
+  retry_count: 0
+  temperature: 0.2
+  context_max_messages: 24
+  context_max_chars: 32000
+  auto_save: true
+  log_level: INFO
+router:
+  default_mode: machine_only
+  default_provider: openai
+  default_model: gpt-4.1-mini
+  temperature: 0.0
+  machine_confidence_threshold: 0.75
+  timeout_ms: 20000
+  retry_count: 0
+storage:
+  runtime_dir: runtime/independent_action_chat
+  action_output_dir: actioning/independent_action_chat_pending
+  log_dir: logs/independent_action_chat
+server:
+  host: 127.0.0.1
+  port: 8765
+ai_controller:
+  script: scripts/action/infrastructures/action_ai_controller_v0002.py
+  config: config/action/ai/action_ai_controller_config_v0003.yml
+  app_id: independent_action_chat
+  token_env: INDEPENDENT_ACTION_CHAT_AI_TOKEN
+  token_file: runtime/independent_action_chat/ai_application_access.json
+  start_on_launch: true
+provider_profiles:
+  openai:
+    controller_provider: openai
+    profile: default
+    operation: chat
+    display_name: OpenAI
+    models:
+    - id: gpt-4.1-mini
+      display_name: gpt-4.1-mini
+      enabled: true
+      capabilities:
+        streaming: false
+        vision: true
+        tools: false
+embedding:
+  provider: local_embeddings
+  model: BAAI/bge-m3
+  profile: default
+  dimension: 1024

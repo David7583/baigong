@@ -1,0 +1,1 @@
+{"schema_version":"workbench.category.v1","id":"adapters","name":"适配器","module":"adapters","description":"扫描后端适配器，按版本接入工作台，检查契约与来源","order":8.5,"scan":true,"add":false,"add_label":"扫描适配器"}

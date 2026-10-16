@@ -96,7 +96,7 @@ def verify_persistence(binding: dict, completion_path: Path) -> dict:
         db = within(Path(paths[key]), root)
         if not db.is_file():
             raise RetentionError("Existing business database required")
-        with sqlite3.connect(Path(str(db).removeprefix('\\\\?\\')).as_uri() + "?mode=ro", uri=True) as connection:
+        with sqlite3.connect(db.as_uri() + "?mode=ro", uri=True) as connection:
             if connection.execute("PRAGMA integrity_check").fetchone()[0] != "ok" or connection.execute("PRAGMA foreign_key_check").fetchall():
                 raise RetentionError(f"SQLite integrity check failed: {key}")
             if key == "action_db":

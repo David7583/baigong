@@ -266,9 +266,21 @@ def _local_model_call(texts: List[str], embed_config: Dict[str, Any]) -> List[Li
     device = backend_cfg.get("device", "cpu")
     
     # 使用缓存避免重复加载模型
-    cache_key = f"{model_name}:{device}"
+    model_path = Path(model_name)
+    if not model_path.is_absolute():
+        candidate = _find_project_root(Path(__file__)) / model_path
+        if candidate.is_dir():
+            model_name = str(candidate.resolve())
+    dtype = backend_cfg.get("dtype", "float32")
+    if dtype not in {"float32", "float16", "bfloat16"}:
+        raise ValueError("Unsupported embedding dtype")
+    local_only = bool(backend_cfg.get("local_files_only", False))
+    truncate_dim = backend_cfg.get("truncate_dim")
+    if truncate_dim is not None and (type(truncate_dim) is not int or truncate_dim < 1 or truncate_dim != embed_config["model"]["dimension"]):
+        raise ValueError("Invalid embedding truncate_dim or configured dimension mismatch")
+    cache_key = f"{model_name}:{device}:{dtype}:{local_only}:{truncate_dim}"
     if cache_key not in _LOCAL_MODEL_CACHE:
-        _LOCAL_MODEL_CACHE[cache_key] = SentenceTransformer(model_name, device=device)
+        _LOCAL_MODEL_CACHE[cache_key] = SentenceTransformer(model_name, device=device, local_files_only=local_only, model_kwargs={"torch_dtype": dtype}, truncate_dim=truncate_dim)
     
     model = _LOCAL_MODEL_CACHE[cache_key]
     
@@ -278,6 +290,7 @@ def _local_model_call(texts: List[str], embed_config: Dict[str, Any]) -> List[Li
         texts,
         batch_size=encode_batch_size,
         convert_to_numpy=True,
+        normalize_embeddings=bool(backend_cfg.get("normalize_embeddings", False)),
         show_progress_bar=False,
     )
     
@@ -324,6 +337,8 @@ def _reuse_context(config: Dict[str, Any], ingest_run_id: Optional[str], mock: b
     if not isinstance(model_name, str) or not model_name:
         return None
     model_root = Path(model_name)
+    if not model_root.is_absolute():
+        model_root = _find_project_root(Path(__file__)) / model_root
     if not model_root.is_dir() or not (model_root / "modules.json").is_file():
         return None
     model_files = [(file.relative_to(model_root).as_posix(), _file_digest(file))

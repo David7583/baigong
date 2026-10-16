@@ -1,0 +1,173 @@
+# 官方文档核查日期：2026-09-21；密钥与公开能力目录分离。
+schema_version: '2.0'
+kind: example
+catalog: ai_api_catalog_v0001.yml
+runtime:
+  network_enabled: false
+  automatic_provider_fallback: false
+  connect_timeout_seconds: 10
+  read_timeout_seconds: 120
+  max_retries: 2
+  retry_statuses:
+  - 408
+  - 429
+  - 500
+  - 502
+  - 503
+  - 504
+  retry_non_idempotent_requests: false
+  log_secrets: false
+  log_request_bodies: false
+  log_response_bodies: false
+credentials:
+  openai_default:
+    provider: openai
+    source: environment
+    environment_variable: OPENAI_API_KEY
+    value: ''
+    scope: inference
+    region: null
+  openai_admin:
+    provider: openai
+    source: environment
+    environment_variable: OPENAI_ADMIN_KEY
+    value: ''
+    scope: admin
+    region: null
+  anthropic_default:
+    provider: anthropic
+    source: environment
+    environment_variable: ANTHROPIC_API_KEY
+    value: ''
+    scope: inference
+    region: null
+  anthropic_admin:
+    provider: anthropic
+    source: environment
+    environment_variable: ANTHROPIC_ADMIN_API_KEY
+    value: ''
+    scope: admin
+    region: null
+  deepseek_default:
+    provider: deepseek
+    source: environment
+    environment_variable: DEEPSEEK_API_KEY
+    value: ''
+    scope: inference
+    region: null
+  kimi_default:
+    provider: kimi
+    source: environment
+    environment_variable: MOONSHOT_API_KEY
+    value: ''
+    scope: inference
+    region: null
+  zhipu_default:
+    provider: zhipu
+    source: environment
+    environment_variable: ZHIPU_API_KEY
+    value: ''
+    scope: inference
+    region: null
+  qwen_default:
+    provider: qwen
+    source: environment
+    environment_variable: DASHSCOPE_API_KEY
+    value: ''
+    scope: inference
+    region: cn-beijing
+  qwen_ap-southeast-1:
+    provider: qwen
+    source: environment
+    environment_variable: DASHSCOPE_SG_API_KEY
+    value: ''
+    scope: inference
+    region: ap-southeast-1
+  qwen_us-east-1:
+    provider: qwen
+    source: environment
+    environment_variable: DASHSCOPE_US_API_KEY
+    value: ''
+    scope: inference
+    region: us-east-1
+  qwen_cn-hongkong:
+    provider: qwen
+    source: environment
+    environment_variable: DASHSCOPE_HK_API_KEY
+    value: ''
+    scope: inference
+    region: cn-hongkong
+  qwen_eu-central-1:
+    provider: qwen
+    source: environment
+    environment_variable: DASHSCOPE_EU_API_KEY
+    value: ''
+    scope: inference
+    region: eu-central-1
+  qwen_ap-northeast-1:
+    provider: qwen
+    source: environment
+    environment_variable: DASHSCOPE_JP_API_KEY
+    value: ''
+    scope: inference
+    region: ap-northeast-1
+  xai_default:
+    provider: xai
+    source: environment
+    environment_variable: XAI_API_KEY
+    value: ''
+    scope: inference
+    region: null
+  gemini_default:
+    provider: gemini
+    source: environment
+    environment_variable: GEMINI_API_KEY
+    value: ''
+    scope: inference
+    region: null
+  typesafe_default:
+    provider: typesafe
+    source: environment
+    environment_variable: TYPESAFE_API_KEY
+    value: ''
+    scope: inference
+    region: null
+provider_bindings:
+  openai:
+    enabled: false
+    credential: openai_default
+    profile: default
+  anthropic:
+    enabled: false
+    credential: anthropic_default
+    profile: default
+  deepseek:
+    enabled: false
+    credential: deepseek_default
+    profile: default
+  kimi:
+    enabled: false
+    credential: kimi_default
+    profile: default
+  zhipu:
+    enabled: false
+    credential: zhipu_default
+    profile: default
+  qwen:
+    enabled: false
+    credential: qwen_default
+    profile: default
+  xai:
+    enabled: false
+    credential: xai_default
+    profile: default
+  gemini:
+    enabled: false
+    credential: gemini_default
+    profile: default
+  typesafe:
+    enabled: false
+    credential: typesafe_default
+    profile: default
+routes: {}
+operation_overrides: {}

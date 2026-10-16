@@ -1,0 +1,1 @@
+{"schema_version":"workbench.category.v1","id":"assets","name":"资产管理","kind":"collection","module":"assets","scan":true,"add":true,"add_label":"导入资产","order":11,"description":"可复用数字内容的身份、分类、版本与项目引用"}

@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "workbench.governance.rule.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "kind",
+    "name",
+    "description",
+    "content",
+    "scopes",
+    "enforcement",
+    "state",
+    "version",
+    "references",
+    "validators"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workbench.governance.rule.v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_.-]{2,100}$"
+    },
+    "kind": {
+      "enum": [
+        "principle",
+        "engineering",
+        "workflow",
+        "prompt"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 150
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "content": {
+      "type": "string",
+      "maxLength": 60000
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100
+    },
+    "enforcement": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_.-]{2,60}$",
+      "description": "Registered governance/levels.json level ID; initial mandatory and ordinary."
+    },
+    "state": {
+      "enum": [
+        "draft",
+        "active",
+        "retired"
+      ]
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100
+    },
+    "validators": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "github.intake.v1",
+          "tool.independence.v1"
+        ]
+      }
+    },
+    "updated_at": {
+      "type": "number"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100
+    },
+    "failure_handling": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100
+    },
+    "change_registration": {
+      "type": "object",
+      "required": [
+        "id",
+        "rule_id",
+        "from_version",
+        "to_version",
+        "reason",
+        "actor",
+        "registered_at",
+        "changed_fields"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "rule_id": {
+          "type": "string"
+        },
+        "from_version": {
+          "type": "integer"
+        },
+        "to_version": {
+          "type": "integer"
+        },
+        "from_level": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "to_level": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 5
+        },
+        "actor": {
+          "type": "string"
+        },
+        "registered_at": {
+          "type": "number"
+        },
+        "changed_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "approval": {
+          "type": "object",
+          "required": [
+            "proposal_id",
+            "reviewer",
+            "approved_at",
+            "channel",
+            "fingerprint"
+          ],
+          "properties": {
+            "proposal_id": {
+              "type": "string"
+            },
+            "fingerprint": {
+              "type": "string"
+            },
+            "reviewer": {
+              "const": "local-user"
+            },
+            "approved_at": {
+              "type": "number"
+            },
+            "channel": {
+              "const": "electron-native-dialog"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

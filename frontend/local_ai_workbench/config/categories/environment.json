@@ -1,0 +1,10 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "environment",
+  "name": "环境 / Requirement",
+  "module": "environment",
+  "order": 100,
+  "description": "实时加载依赖与当前工作区已安装环境的两个清单",
+  "add_label": "刷新清单",
+  "scan": false
+}

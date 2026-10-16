@@ -1,0 +1,12 @@
+{
+  "kind": "collection",
+  "name": "第三方库",
+  "module": "libraries",
+  "scan": true,
+  "id": "libraries",
+  "add_label": "添加第三方库",
+  "schema_version": "workbench.category.v1",
+  "add": true,
+  "order": 7,
+  "description": "管理本地区第三方依赖和库来源"
+}

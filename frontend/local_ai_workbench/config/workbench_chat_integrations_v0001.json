@@ -1,0 +1,11 @@
+{
+  "schema_version": "workbench.chat-integrations.v1",
+  "profiles": [
+    {
+      "launcher": "setup_workbench_v0001.py",
+      "server": "action_chat_server_v0014",
+      "config": "config/action/config/independent_action_chat_release.yml",
+      "retrieval": "config/action/config/retrieval_not_installed.yml"
+    }
+  ]
+}

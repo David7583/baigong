@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench.category.v1",
+  "id": "github",
+  "name": "第三方 GitHub",
+  "module": "github",
+  "kind": "collection",
+  "description": "收集仓库与能力来源",
+  "order": 6,
+  "scan": true,
+  "add": true,
+  "add_label": "添加 GitHub 项目"
+}
